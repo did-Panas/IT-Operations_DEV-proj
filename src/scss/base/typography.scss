@@ -1,0 +1,70 @@
+.h1 {
+	font-size: toRem(70);
+	line-height: 120%;
+	letter-spacing: -2%;
+}
+
+.h2 {
+	font-size: toRem(50);
+	line-height: 130%;
+}
+
+.h3,
+.h3_lowercase {
+	font-size: toRem(30);
+}
+
+.h4 {
+	font-size: toRem(25);
+}
+
+.h3_services {
+	font-size: toRem(20);
+	line-height: 140%;
+}
+
+.h3_footer {
+	font-size: toRem(20);
+}
+
+.h3_accordion {
+	font-size: toRem(24);
+	line-height: 120%;
+}
+
+.h1,
+.h2,
+.h3,
+.h3_lowercase,
+.h4,
+.h3_services,
+.h3_footer,
+.h3_accordion,
+.paragraph,
+.paragraph_list {
+	font-weight: 700;
+}
+
+.h3,
+.h3_lowercase,
+.h4,
+.h3_footer {
+	line-height: 130%;
+}
+
+.h2,
+.h4,
+.h3_accordion {
+	letter-spacing: -1%;
+}
+
+.h3,
+.h3_services,
+.h3_footer {
+	text-transform: uppercase;
+}
+
+.paragraph,
+.paragraph_list {
+	line-height: 144%;
+}
