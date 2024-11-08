@@ -13,13 +13,12 @@
 	border-radius: toRem(5);
 	line-height: 160%;
 
-	transform: scale(1, 1);
-	outline: 0px solid var(--cta_hover);
-	transition: all 0.3s ease 0s;
+	transform: scale(0.97);
+	transition: all 0.3s ease-in 0s;
 
 	@media (any-hover: hover) {
 		&:hover {
-			transform: scale(1.009, 1.009);
+			transform: scale(1);
 
 			background-color: var(--cta_hover);
 		}
