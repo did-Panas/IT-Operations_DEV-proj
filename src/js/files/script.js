@@ -71,4 +71,26 @@ import { flsModules } from "./modules.js";
 
 // ================================================================================
 
-// ==================================================================================
+// ===== MULTILEVEL MENU ==============================================================
+
+let arrow = document.querySelectorAll('.arrow');
+
+if (arrow) {
+	for (let i = 0; i < arrow.length; i++) {
+		let subMenu = arrow[i].nextElementSibling;
+		let thisArrow = arrow[i];
+
+		arrow[i].addEventListener('click', function () {
+			subMenu.classList.toggle('open');
+			thisArrow.classList.toggle('active');
+		});
+	}
+}
+
+
+
+
+
+
+
+// =============================================== >>>>>>>>>>> DROPDOWN MENU =========

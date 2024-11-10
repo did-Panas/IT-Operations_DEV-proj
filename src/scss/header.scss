@@ -1,4 +1,153 @@
-//====================================================================================================
+.header {
+	// .header__container
+	&__container {
+	}
+
+	// .header__logo
+	&__logo {
+	}
+
+	// .header__menu
+	&__menu {
+	}
+}
+
+.menu {
+	// .menu__body
+	&__body {
+	}
+
+	// .menu__list
+	&__list {
+	}
+
+	// .menu__item
+	&__item {
+	}
+
+	// .menu__link
+	&__link {
+	}
+
+	// .menu__burger-btn
+	&__burger-btn {
+	}
+
+	// .menu__mob
+	&__mob {
+	}
+}
+
+.mob-menu {
+	// .mob-menu__logo
+	&__logo {
+	}
+
+	// .mob-menu__nav
+	&__nav {
+	}
+
+	// .mob-menu__list
+	&__list {
+	}
+
+	// .mob-menu__item
+	&__item {
+	}
+
+	// .mob-menu__link
+	&__link {
+	}
+
+	// .mob-menu__btn
+	&__btn {
+	}
+}
+
+.sub-mob-menu {
+	// .sub-mob-menu__title
+	&__title {
+		position: relative;
+		z-index: 5;
+
+		display: grid;
+		grid-template-columns: auto auto 1fr;
+		align-items: center;
+		gap: toRem(13);
+
+		cursor: pointer;
+
+		&::before {
+			content: "";
+
+			width: toRem(8);
+			height: toRem(8);
+
+			background-image: url("@img/header/arrow.svg");
+			background-position: center center; /* x y */
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			transition: transform 0.3s ease 0s;
+		}
+
+		&::after {
+			content: "";
+
+			justify-self: end;
+
+			width: toRem(10);
+			height: toRem(10);
+
+			background-image: url("@img/header/plus.svg");
+			background-position: center center; /* x y */
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			transition: transform 0.3s ease 0s;
+		}
+
+		&.active {
+			&::before {
+				transform: rotate(90deg);
+			}
+
+			&::after {
+				width: toRem(8);
+				height: toRem(8);
+
+				background-image: url("@img/header/minus.svg");
+			}
+		}
+	}
+
+	// .sub-mob-menu__list
+	&__list {
+		position: relative;
+
+		visibility: hidden;
+		max-height: 0;
+		opacity: 0;
+
+		transition:
+			max-height 0.3s ease 0s,
+			opacity 0.4s linear 0s;
+
+		&.open {
+			max-height: toRem(500);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	// .sub-mob-menu__item
+	&__item {
+	}
+
+	// .sub-mob-menu__link
+	&__link {
+	}
+}
 
 //====================================================================================================
 
