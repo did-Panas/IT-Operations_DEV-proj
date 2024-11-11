@@ -4,13 +4,17 @@
 .button {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 
-	height: toRem(55);
-	padding: 0px toRem(22);
+	@include adaptiveValue("height", 55, 44, 0, 992, 768);
+	@include adaptiveValue("padding-right", 22, 15, 0, 992, 768);
+	@include adaptiveValue("padding-left", 22, 17, 0, 992, 768);
 
 	color: var(--white);
 	background-color: var(--cta);
 	border-radius: toRem(5);
+
+	@include adaptiveValue("font-size", 18, 16, 0, 992, 768);
 	line-height: 160%;
 
 	transform: scale(0.97);
@@ -23,6 +27,7 @@
 			background-color: var(--cta_hover);
 		}
 	}
+
 	&--fw {
 		width: 100%;
 	}

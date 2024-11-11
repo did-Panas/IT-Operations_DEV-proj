@@ -1,10 +1,44 @@
 .header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+
 	// .header__container
 	&__container {
 	}
 
+	// .header__wrapper
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: toRem(50);
+
+		min-height: toRem(113);
+
+		border-bottom: 1px solid var(--highlight);
+
+		@media (max-width: $mobile) {
+			min-height: toRem(100);
+		}
+
+		@media (min-width: $mobileSmall) {
+			margin: 0 toRem(25);
+		}
+
+		@media (max-width: $mobileSmall) {
+			min-height: toRem(70);
+		}
+	}
+
 	// .header__logo
 	&__logo {
+		& img {
+			display: block;
+
+			@include adaptiveValue("width", 255, 135, 0, 768, 376);
+		}
 	}
 
 	// .header__menu
@@ -15,14 +49,56 @@
 .menu {
 	// .menu__body
 	&__body {
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+
+	&__body,
+	&__burger-btn {
+		color: var(--white);
 	}
 
 	// .menu__list
 	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: toRem(20);
+		column-gap: toRem(30);
 	}
 
 	// .menu__item
 	&__item {
+		position: relative;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			height: toRem(1);
+			width: 0;
+			bottom: toRem(-3);
+
+			background-color: var(--white);
+			transition: all 0.3s ease-out;
+		}
+
+		&::before {
+			left: 10%;
+		}
+
+		&::after {
+			right: 10%;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::before,
+				&::after {
+					width: 40%;
+				}
+			}
+		}
 	}
 
 	// .menu__link
@@ -31,20 +107,69 @@
 
 	// .menu__burger-btn
 	&__burger-btn {
+		display: flex;
+		align-items: center;
+		gap: toRem(11);
+
+		& span {
+			text-transform: uppercase;
+
+			@media (min-width: $mobile) {
+				display: none;
+			}
+		}
 	}
 
 	// .menu__mob
 	&__mob {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		z-index: 5;
+
+		background-color: var(--white);
+		opacity: 0;
+
+		transition:
+			right 0.6s ease-out,
+			opacity 0.9s ease-out;
+
+		.menu-open & {
+			right: 0;
+
+			opacity: 1;
+		}
 	}
 }
 
 .mob-menu {
+	display: grid;
+
+	padding: toRem(45) toRem(50) toRem(0);
+
+	@media (max-width: $mobileSmall) {
+		padding: toRem(25) toRem(25) toRem(0);
+	}
+
+	@media (min-width: $mobileSmall) {
+		min-width: toRem(304);
+	}
+
 	// .mob-menu__logo
 	&__logo {
+		margin-bottom: toRem(35);
+
+		& img {
+			width: toRem(108);
+		}
 	}
 
 	// .mob-menu__nav
 	&__nav {
+		margin-bottom: toRem(20);
+
+		font-size: toRem(16);
+		line-height: 144%;
 	}
 
 	// .mob-menu__list
@@ -53,14 +178,35 @@
 
 	// .mob-menu__item
 	&__item {
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
 	}
 
 	// .mob-menu__link
 	&__link {
+		padding-left: toRem(20);
 	}
 
 	// .mob-menu__btn
 	&__btn {
+		margin-bottom: toRem(25);
+
+		@media (min-width: $mobileSmall) {
+			margin-left: toRem(18);
+		}
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(30);
+		}
+	}
+
+	// .mob-menu__bottom-decor
+	&__bottom-decor {
+		width: 100%;
+		height: toRem(5);
+
+		background-color: var(--highlight);
 	}
 }
 
@@ -76,6 +222,10 @@
 		gap: toRem(13);
 
 		cursor: pointer;
+
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
 
 		&::before {
 			content: "";
@@ -125,12 +275,14 @@
 	&__list {
 		position: relative;
 
-		visibility: hidden;
 		max-height: 0;
+		padding-left: toRem(30);
+
+		visibility: hidden;
 		opacity: 0;
 
 		transition:
-			max-height 0.3s ease 0s,
+			max-height 0.3s ease-out 0s,
 			opacity 0.4s linear 0s;
 
 		&.open {
@@ -142,6 +294,9 @@
 
 	// .sub-mob-menu__item
 	&__item {
+		&:not(:last-child) {
+			margin-bottom: toRem(12);
+		}
 	}
 
 	// .sub-mob-menu__link
@@ -153,57 +308,66 @@
 
 //Burger
 
-// .icon-menu {
-// 	display: none;
-// 	@media (max-width: $mobile) {
-// 		display: block;
-// 		position: relative;
-// 		width: toRem(30);
-// 		height: toRem(18);
-// 		z-index: 5;
-// 		@media (any-hover: none) {
-// 			cursor: default;
-// 		}
-// 		span,
-// 		&::before,
-// 		&::after {
-// 			content: "";
-// 			transition: all 0.3s ease 0s;
-// 			right: 0;
-// 			position: absolute;
-// 			width: 100%;
-// 			height: toRem(2);
-// 			background-color: #000;
-// 		}
-// 		&::before {
-// 			top: 0;
-// 		}
-// 		&::after {
-// 			bottom: 0;
-// 		}
-// 		span {
-// 			top: calc(50% - toRem(1));
-// 		}
-// 		.menu-open & {
-// 			span {
-// 				width: 0;
-// 			}
-// 			&::before,
-// 			&::after {
-// 			}
-// 			&::before {
-// 				top: calc(50% - toRem(1));
-// 				transform: rotate(-45deg);
-// 			}
-// 			&::after {
-// 				bottom: calc(50% - toRem(1));
-// 				transform: rotate(45deg);
-// 			}
-// 		}
-// 	}
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		@include adaptiveValue("width", 36, 24, 0, 768, 376);
+		@include adaptiveValue("height", 22, 16, 0, 768, 376);
+		z-index: 10;
+		@media (any-hover: none) {
+			cursor: default;
+		}
 
-// 	// !!! Віключення виділення кнопки
-// 	&:focus {
-// 		outline: none;
-// 	}
-// }
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			@include adaptiveValue("height", 6, 4, 0, 768, 376);
+			background-color: #d9d9d9;
+			border-radius: toRem(2);
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+				height: toRem(2);
+			}
+			span,
+			&::before,
+			&::after {
+				background-color: var(--highlight);
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	// !!! Віключення виділення кнопки
+	&:focus {
+		outline: none;
+	}
+}
