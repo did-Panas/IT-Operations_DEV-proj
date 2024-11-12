@@ -107,6 +107,11 @@
 
 	// .menu__burger-btn
 	&__burger-btn {
+		position: fixed;
+		z-index: 10;
+		top: toRem(44);
+		right: toRem(50);
+
 		display: flex;
 		align-items: center;
 		gap: toRem(11);
@@ -114,9 +119,18 @@
 		& span {
 			text-transform: uppercase;
 
+			.menu-open & {
+				opacity: 0;
+			}
+
 			@media (min-width: $mobile) {
 				display: none;
 			}
+		}
+
+		@media (max-width: $mobileSmall) {
+			top: toRem(26);
+			right: toRem(25);
 		}
 	}
 
@@ -313,9 +327,10 @@
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
+		z-index: 50;
 		@include adaptiveValue("width", 36, 24, 0, 768, 376);
 		@include adaptiveValue("height", 22, 16, 0, 768, 376);
-		z-index: 10;
+
 		@media (any-hover: none) {
 			cursor: default;
 		}
