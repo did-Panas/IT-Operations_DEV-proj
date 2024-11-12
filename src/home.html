@@ -8,9 +8,30 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
-			<div class="top" style="background-color: var(--primary); height: 300px;"></div>
-			<div class="block" style="background-color: white; height: 800px;"></div>
 
+			<section class="page__hero hero">
+				<div class="hero__container">
+					<div class="hero__wrapper">
+
+						<h1 class="hero__title">
+							Jeden partner, všechny IT služby. Jsme
+							<spans>IT Operations.</spans>
+						</h1>
+						<p class="hero__txt">
+							Ušetříme vám čas, starosti a náklady spojené s hledáním různých dodavatelů. Postaráme se o všechny vaše IT potřeby, od každodenní podpory pro stabilní chod firmy po analýzu
+							firemních dat pro lepší rozhodování.
+						</p>
+						<button class="hero__btn button">Nezávazná konzultace</button>
+						<div class="hero__image interact-img">
+							<div class="interact-img__back-pad"></div>
+							<div class="interact-img__photo">
+								<img src="@img/home/hero-image@1x.jpeg" srcset="@img/home/hero-image@2x.jpeg 2x" alt="Image">
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
 
 		</main>
 		@@include('html/_footer.htm',{})
