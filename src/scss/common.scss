@@ -1,1 +1,30 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+//===== Side-Margins ===================================================
+
+.wrap {
+	@media (min-width: $mobileSmall) {
+		margin: 0 toRem(25);
+	}
+}
+
+//===== Underline ======================================================
+
+.underline {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		right: 0;
+		bottom: toRem(-10);
+
+		height: toRem(12);
+		width: 100%;
+
+		background-image: url("@img/underline.svg");
+		background-position: center center; /* x y */
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+}

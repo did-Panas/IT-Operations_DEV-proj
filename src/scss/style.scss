@@ -151,6 +151,7 @@ body {
 // Підключення стилів окремих блоків
 @import "header";
 @import "footer";
+@import "sections/hero";
 
 // Підключення стилів окремих сторінок
 @import "home";
@@ -158,7 +159,9 @@ body {
 // ---------------------------------------
 
 .page {
-	// .page__hero
-	&__hero {
+	// .page__home-hero
+	&__home-hero {
+		padding-top: toRem(250);
+		padding-bottom: toRem(150);
 	}
 }

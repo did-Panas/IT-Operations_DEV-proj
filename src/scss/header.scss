@@ -23,10 +23,6 @@
 			min-height: toRem(100);
 		}
 
-		@media (min-width: $mobileSmall) {
-			margin: 0 toRem(25);
-		}
-
 		@media (max-width: $mobileSmall) {
 			min-height: toRem(70);
 		}

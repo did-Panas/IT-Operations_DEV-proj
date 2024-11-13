@@ -1,0 +1,95 @@
+//===== HERO SECTION ===================================================
+
+.hero {
+	background-color: var(--primary);
+	color: var(--white);
+
+	// .hero__container
+	&__container {
+	}
+
+	// .hero__wrapper
+	&__wrapper {
+		display: grid;
+		row-gap: toRem(20);
+		column-gap: toRem(100);
+	}
+
+	// .hero__title
+	&__title {
+		margin-bottom: toRem(35);
+	}
+
+	// .hero__txt
+	&__txt {
+		margin-bottom: toRem(15);
+	}
+
+	// .hero__btn
+	&__btn {
+		justify-self: start;
+	}
+
+	// .hero__image
+	&__image {
+	}
+}
+
+.page__home-hero {
+	& .hero__wrapper {
+		grid-template: auto 1fr auto / 1fr auto;
+	}
+
+	& .hero__image {
+		grid-column: 2 / -1;
+		grid-row: 1 / -1;
+	}
+}
+
+.interact-img {
+	position: relative;
+
+	aspect-ratio: 1 / 1;
+	width: toRem(368);
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-color: var(--white);
+		border-radius: 20px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: 15;
+		background-image: url("@img/home/border.svg");
+		transform: rotate(-4deg);
+		transition: transform 0.3s ease 0s;
+	}
+
+	// .interact-img__photo
+	&__photo {
+		aspect-ratio: 1 / 1;
+		width: 100%;
+
+		border-radius: 20px;
+		overflow: hidden;
+
+		transform: rotate(-2deg);
+		transition: transform 0.3s ease 0s;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			&::after,
+			& .interact-img__photo {
+				transform: rotate(0deg);
+			}
+		}
+	}
+}
+
+//================================== >>>>> HERO SECTION ================

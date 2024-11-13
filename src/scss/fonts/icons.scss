@@ -14,3 +14,31 @@
 		display: block;
 	}
 }
+
+._icon-search:before {
+	content: "\e900";
+}
+._icon-quotes:before {
+	content: "\e901";
+}
+._icon-plus:before {
+	content: "\e902";
+}
+._icon-ok:before {
+	content: "\e903";
+}
+._icon-minus:before {
+	content: "\e904";
+}
+._icon-logo-small:before {
+	content: "\e905";
+}
+._icon-filter:before {
+	content: "\e906";
+}
+._icon-arrow:before {
+	content: "\e907";
+}
+._icon-close:before {
+	content: "\e908";
+}
