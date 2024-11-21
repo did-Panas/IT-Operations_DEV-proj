@@ -17,15 +17,19 @@
 	@include adaptiveValue("font-size", 18, 16, 0, 992, 768);
 	line-height: 160%;
 
-	transform: scale(0.97);
+	transform: scale(1);
 	transition: all 0.3s ease-in 0s;
 
 	@media (any-hover: hover) {
 		&:hover {
-			transform: scale(1);
+			transform: scale(1.03);
 
 			background-color: var(--cta_hover);
 		}
+	}
+
+	&--sm {
+		height: toRem(36);
 	}
 
 	&--fw {

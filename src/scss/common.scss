@@ -22,9 +22,13 @@
 		height: toRem(12);
 		width: 100%;
 
-		background-image: url("@img/underline.svg");
-		background-position: center center; /* x y */
-		background-size: contain;
+		background-image: url("@img/underline-sm.svg");
+
+		background-size: 100%;
 		background-repeat: no-repeat;
 	}
+}
+
+.popup__title .underline::after {
+	bottom: toRem(-5);
 }

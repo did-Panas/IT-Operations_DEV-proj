@@ -23,6 +23,12 @@
 	// .hero__txt
 	&__txt {
 		margin-bottom: toRem(15);
+
+		& p {
+			&:not(:last-child) {
+				margin-bottom: toRem(15);
+			}
+		}
 	}
 
 	// .hero__btn
@@ -64,7 +70,7 @@
 		content: "";
 		position: absolute;
 		inset: 0;
-		z-index: 15;
+		z-index: 3;
 		background-image: url("@img/home/border.svg");
 		transform: rotate(-4deg);
 		transition: transform 0.3s ease 0s;

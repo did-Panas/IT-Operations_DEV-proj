@@ -71,7 +71,7 @@ import { flsModules } from "./modules.js";
 
 // ================================================================================
 
-// ===== MULTILEVEL MENU ==============================================================
+// ===== MULTILEVEL MENU ==========================================================
 
 let arrow = document.querySelectorAll('.arrow');
 
@@ -87,10 +87,23 @@ if (arrow) {
 	}
 }
 
+// ================================================================================
+
+// ===== PHONE INPUT MASK (IMASK) =================================================
+
+import IMask from 'imask';
+
+const element = document.getElementById('phone');
+const maskOptions = {
+	mask: '+{42\\0} 000 000 000'
+};
+const mask = IMask(element, maskOptions);
+
+// ================================================================================
+
+const phoneInput = document.querySelector('#phone');
 
 
 
 
-
-
-// =============================================== >>>>>>>>>>> DROPDOWN MENU =========
+console.log(phoneInput);

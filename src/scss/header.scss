@@ -1,9 +1,5 @@
 .header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-
+	background-color: var(--primary);
 	// .header__container
 	&__container {
 	}
@@ -238,15 +234,10 @@
 		}
 
 		&::before {
-			content: "";
-
-			width: toRem(8);
-			height: toRem(8);
-
-			background-image: url("@img/arrow.svg");
-			background-position: center center; /* x y */
-			background-size: contain;
-			background-repeat: no-repeat;
+			content: "\e907";
+			font-family: "icons";
+			font-size: toRem(8);
+			color: var(--highlight);
 
 			transition: transform 0.3s ease 0s;
 		}
