@@ -22,7 +22,6 @@
 // За замовчуванням шрифт ==============================================================================================================================================================================================================================================================================
 $fontFamily: "Source Sans 3", sans-serif;
 $fontSize: toRem(18); // де 18(px) - розмір шрифту за замовчуванням з макету
-@import "base/typography";
 
 // Основні кольори
 $mainColor: #272b49; // Колір шрифту за замовчуванням
@@ -161,7 +160,15 @@ body {
 .page {
 	// .page__home-hero
 	&__home-hero {
-		padding-top: toRem(135);
-		padding-bottom: toRem(150);
+		padding-top: toRem(70);
+		padding-bottom: toRem(80);
+
+		@media (max-width: em(629)) {
+			padding-top: toRem(40);
+			padding-bottom: toRem(60);
+		}
+
+		@include adaptiveValue("padding-top", 135, 70, 2, 1250, 768);
+		@include adaptiveValue("padding-bottom", 150, 80, 2, 1250, 768);
 	}
 }

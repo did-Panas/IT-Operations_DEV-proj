@@ -1,5 +1,10 @@
 .header {
 	background-color: var(--primary);
+
+	@media (min-width: $mobile) {
+		border-bottom: 1px solid var(--highlight);
+	}
+
 	// .header__container
 	&__container {
 	}
@@ -13,10 +18,10 @@
 
 		min-height: toRem(113);
 
-		border-bottom: 1px solid var(--highlight);
-
 		@media (max-width: $mobile) {
 			min-height: toRem(100);
+
+			border-bottom: 1px solid var(--highlight);
 		}
 
 		@media (max-width: $mobileSmall) {
@@ -101,12 +106,21 @@
 	&__burger-btn {
 		position: fixed;
 		z-index: 10;
-		top: toRem(44);
-		right: toRem(50);
+		top: toRem(34);
+		right: toRem(40);
 
 		display: flex;
 		align-items: center;
 		gap: toRem(11);
+
+		padding: toRem(10);
+
+		border-radius: toRem(5);
+		background-color: rgba(39, 43, 73, 0.4);
+
+		.menu-open & {
+			background-color: transparent;
+		}
 
 		& span {
 			text-transform: uppercase;
@@ -123,6 +137,14 @@
 		@media (max-width: $mobileSmall) {
 			top: toRem(26);
 			right: toRem(25);
+		}
+
+		@media (max-width: em(699)) {
+			right: toRem(15);
+		}
+
+		@media (max-width: $mobileSmall) {
+			top: toRem(19);
 		}
 	}
 

@@ -16,6 +16,7 @@
 
 	@include adaptiveValue("font-size", 18, 16, 0, 992, 768);
 	line-height: 160%;
+	white-space: nowrap;
 
 	transform: scale(1);
 	transition: all 0.3s ease-in 0s;

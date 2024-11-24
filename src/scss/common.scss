@@ -3,7 +3,7 @@
 //===== Side-Margins ===================================================
 
 .wrap {
-	@media (min-width: $mobileSmall) {
+	@media (min-width: em(700)) {
 		margin: 0 toRem(25);
 	}
 }
@@ -12,6 +12,8 @@
 
 .underline {
 	position: relative;
+
+	white-space: nowrap;
 
 	&::after {
 		content: "";
