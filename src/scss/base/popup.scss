@@ -24,6 +24,10 @@ body::after {
 	transition: visibility 0.8s ease 0s;
 	visibility: hidden;
 	pointer-events: none;
+
+	@media (max-width: em(599.98)) {
+		padding: 7px 7px 30px;
+	}
 }
 .popup_show {
 	z-index: 150;
@@ -76,23 +80,37 @@ body::after {
 		&:first-child {
 			position: relative;
 
-			@include adaptiveValue("padding-top", 50, 30, 0, 1250, 992);
-			@include adaptiveValue("padding-right", 80, 35, 0, 1250, 992);
-			@include adaptiveValue("padding-left", 95, 35, 0, 1250, 992);
-			@include adaptiveValue("padding-bottom", 55, 35, 0, 1250, 992);
+			padding: toRem(50) toRem(80) toRem(55) toRem(95);
+
+			@media (max-width: em(1149.98)) {
+				padding: toRem(30) toRem(45) toRem(35) toRem(35);
+			}
+
+			@media (max-width: em(699.98)) {
+				padding: toRem(30) toRem(20) toRem(35) toRem(20);
+			}
+
+			@media (max-width: em(599.98)) {
+				padding: toRem(20) toRem(20) toRem(25) toRem(20);
+			}
 		}
 
 		&:last-child {
-			@include adaptiveValue("padding-top", 50, 30, 0, 1250, 992);
-			@include adaptiveValue("padding-right", 50, 35, 0, 1250, 992);
-			@include adaptiveValue("padding-left", 50, 35, 0, 1250, 992);
-			@include adaptiveValue("padding-bottom", 55, 35, 0, 1250, 992);
+			padding: toRem(50) toRem(50) toRem(55);
 
 			background-color: var(--primary);
 			border-radius: 5px;
 
+			@media (max-width: em(1149.98)) {
+				padding: toRem(30) toRem(35) toRem(35);
+			}
+
 			@media (min-width: $tablet) {
 				color: var(--white);
+			}
+
+			@media (max-width: $tablet) {
+				display: none;
 			}
 		}
 	}
@@ -100,8 +118,10 @@ body::after {
 	// .popup__close
 	&__close {
 		position: absolute;
-		@include adaptiveValue("top", 40, 15, 0, 1250, 992);
-		@include adaptiveValue("right", 35, 15, 0, 1250, 992);
+		top: toRem(5);
+		right: toRem(5);
+		@include adaptiveValue("top", 40, 5, 2, 1250, 992);
+		@include adaptiveValue("right", 35, 5, 2, 1250, 992);
 
 		padding: toRem(10);
 
@@ -118,25 +138,53 @@ body::after {
 				}
 			}
 		}
+
+		@media (max-width: em(599.98)) {
+			top: toRem(20);
+			right: toRem(20);
+		}
 	}
 
 	// .popup__txt-bl
 	&__txt-bl {
 		display: grid;
 		grid-row-gap: toRem(30);
+		@include adaptiveValue("grid-column-gap", 120, 30, 3, 991, 768);
+
+		margin-bottom: toRem(35);
+
+		@media (max-width: $tablet) {
+			grid-template: auto 1fr / 270px auto;
+		}
+
+		@media (max-width: em(649.98)) {
+			grid-template: auto 1fr / 1fr auto;
+		}
+
+		@media (max-width: em(599.98)) {
+			grid-template: repeat(4, auto) / 1fr;
+			grid-row-gap: toRem(25);
+
+			margin-bottom: toRem(45);
+		}
 	}
 
 	// .popup__title
 	&__title {
-		//margin-bottom: toRem(30);
+		@media (max-width: em(599.98)) {
+			margin-bottom: toRem(5);
+		}
 	}
 	// .popup__subtitle
 	&__subtitle {
-		margin-bottom: toRem(35);
 		max-width: toRem(565);
 
 		@include adaptiveValue("font-size", 35, 24, 0, 1250, 768);
 		line-height: 120%;
+
+		@media (max-width: $tablet) {
+			display: none;
+		}
 
 		@media (max-width: $mobile) {
 			line-height: 130%;
@@ -155,10 +203,17 @@ body::after {
 
 	// .popup__descript-txt
 	&__descript-txt {
-		margin-bottom: toRem(25);
-
-		font-weight: 700;
 		line-height: 144%;
+
+		@media (min-width: $tablet) {
+			margin-bottom: toRem(25);
+		}
+
+		@media (max-width: $tablet) {
+			font-size: toRem(24);
+			font-weight: 700;
+			line-height: 130%;
+		}
 	}
 
 	// .popup__benefits
@@ -233,12 +288,26 @@ body::after {
 	grid-row-gap: toRem(27);
 	align-items: end;
 
+	@media (max-width: $mobile) {
+		grid-row-gap: toRem(11);
+	}
+
+	@media (max-width: em(599.98)) {
+		grid-template: repeat(4, auto) / 1fr;
+	}
+
 	// .callb-form__inp
 	&__inp {
 		position: relative;
 
 		display: grid;
 		gap: toRem(3);
+
+		@media (max-width: em(599.98)) {
+			&:not(:last-child) {
+				margin-bottom: toRem(4);
+			}
+		}
 
 		& label {
 			color: var(--highlight);
@@ -253,6 +322,10 @@ body::after {
 			border-radius: 5px;
 
 			font-size: toRem(16);
+
+			@media (max-width: em(599.98)) {
+				height: toRem(44);
+			}
 
 			&._form-error {
 				background-color: rgba(175, 43, 43, 0.15);
@@ -276,6 +349,10 @@ body::after {
 
 	// .callb-form__submit
 	&__submit {
+		@media (max-width: em(599.98)) {
+			grid-row: 4 / -1;
+			justify-self: start;
+		}
 	}
 
 	// .callb-form__priv-pol
@@ -284,6 +361,10 @@ body::after {
 
 		font-size: toRem(12);
 		line-height: 108.333333%; /* 13/12 */
+
+		@media (max-width: em(599.98)) {
+			margin-bottom: toRem(9);
+		}
 
 		& a {
 			text-decoration: underline;
@@ -294,7 +375,19 @@ body::after {
 .benefits-popup {
 	// .benefits-popup__title
 	&__title {
-		margin-bottom: toRem(30);
+		@media (min-width: $tablet) {
+			margin-bottom: toRem(30);
+		}
+
+		@media (max-width: $tablet) {
+			display: none;
+		}
+
+		@media (max-width: em(599.98)) {
+			display: block;
+
+			font-size: toRem(16);
+		}
 	}
 
 	// .benefits-popup__list
@@ -302,6 +395,28 @@ body::after {
 		display: flex;
 		flex-direction: column;
 		gap: toRem(28);
+
+		@media (max-width: $tablet) {
+			grid-column: 2 / -1;
+			grid-row: 1 / -1;
+			gap: toRem(22);
+
+			margin-top: toRem(7);
+
+			font-size: toRem(16);
+		}
+
+		@media (max-width: em(699.98)) {
+			margin-top: toRem(12);
+		}
+
+		@media (max-width: em(599.98)) {
+			grid-column: 1 / -1;
+			grid-row: 4 / -1;
+			gap: toRem(22);
+
+			margin-top: 0;
+		}
 	}
 
 	// .benefits-popup__item
@@ -312,6 +427,14 @@ body::after {
 
 		line-height: 144%;
 
+		@media (max-width: $tablet) {
+			gap: toRem(10);
+		}
+
+		@media (max-width: em(599.98)) {
+			gap: toRem(11);
+		}
+
 		& span {
 			display: flex;
 			align-items: center;
@@ -320,18 +443,33 @@ body::after {
 			aspect-ratio: 1 / 1;
 			flex: 0 0 toRem(28);
 
+			background-color: var(--primary);
 			border-radius: 50%;
 
 			&._icon-ok:before {
 				color: var(--primary);
+				font-size: toRem(13);
 
 				@media (max-width: $tablet) {
 					color: var(--white);
+					font-size: toRem(12);
+				}
+
+				@media (max-width: em(599.98)) {
+					font-size: toRem(10);
 				}
 			}
 
 			@media (min-width: $tablet) {
 				background-color: var(--white);
+			}
+
+			@media (max-width: $tablet) {
+				flex: 0 0 toRem(24);
+			}
+
+			@media (max-width: em(599.98)) {
+				flex: 0 0 toRem(20);
 			}
 		}
 	}
