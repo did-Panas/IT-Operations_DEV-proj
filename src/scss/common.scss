@@ -34,3 +34,22 @@
 .popup__title .underline::after {
 	bottom: toRem(-5);
 }
+
+//===== Icon-OK ======================================================
+
+.ok-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	aspect-ratio: 1 / 1;
+	flex: 0 0 toRem(28);
+
+	background-color: var(--primary);
+	border-radius: 50%;
+
+	&._icon-ok:before {
+		color: var(--white);
+		font-size: toRem(14);
+	}
+}

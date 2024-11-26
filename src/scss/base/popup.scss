@@ -435,20 +435,9 @@ body::after {
 			gap: toRem(11);
 		}
 
-		& span {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			aspect-ratio: 1 / 1;
-			flex: 0 0 toRem(28);
-
-			background-color: var(--primary);
-			border-radius: 50%;
-
+		& span.ok-icon {
 			&._icon-ok:before {
 				color: var(--primary);
-				font-size: toRem(13);
 
 				@media (max-width: $tablet) {
 					color: var(--white);
