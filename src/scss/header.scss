@@ -134,6 +134,10 @@
 			}
 		}
 
+		@media (min-width: $mobile) {
+			display: none;
+		}
+
 		@media (max-width: $mobileSmall) {
 			top: toRem(26);
 			right: toRem(25);

@@ -4,11 +4,15 @@
 :root {
 	--primary: #272b49;
 	--highlight: #309ae0;
+	--highlight_transp-0: rgba(48, 153, 224, 0);
+	--highlight_transp-90: rgba(48, 153, 224, 0.9);
 	--highlight_hover: #0b77bf;
 	--bg1: #cce8f6;
 	--bg2: #e5f6fe;
 	--bg_footer: #f5f5f7;
 	--cta: #ab30bf;
+	--cta_transp-0: rgba(171, 48, 191, 0);
+	--cta_transp-90: rgba(171, 48, 191, 0.9);
 	--cta_hover: #8d0fa2;
 	--white: #fff;
 	--white_transp-40: rgba(255, 255, 255, 0.4);

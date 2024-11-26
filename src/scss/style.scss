@@ -151,6 +151,7 @@ body {
 @import "header";
 @import "footer";
 @import "sections/hero";
+@import "sections/benefits";
 
 // Підключення стилів окремих сторінок
 @import "home";
@@ -170,5 +171,11 @@ body {
 
 		@include adaptiveValue("padding-top", 135, 70, 2, 1250, 768);
 		@include adaptiveValue("padding-bottom", 150, 80, 2, 1250, 768);
+	}
+
+	// .page__home-benefits
+	&__home-benefits {
+		padding-top: toRem(120);
+		padding-bottom: toRem(130);
 	}
 }
