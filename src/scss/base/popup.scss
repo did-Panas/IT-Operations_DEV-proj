@@ -422,7 +422,7 @@ body::after {
 	// .benefits-popup__item
 	&__item {
 		display: flex;
-		align-items: flex-start;
+		align-items: baseline;
 		gap: toRem(12);
 
 		line-height: 144%;

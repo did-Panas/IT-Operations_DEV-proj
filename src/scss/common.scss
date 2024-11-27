@@ -43,13 +43,16 @@
 	justify-content: center;
 
 	aspect-ratio: 1 / 1;
-	flex: 0 0 toRem(28);
+	flex-grow: 0;
+	flex-shrink: 0;
+	@include adaptiveValue("flex-basis", 28, 20, 0, 1250, 768);
 
 	background-color: var(--primary);
 	border-radius: 50%;
 
 	&._icon-ok:before {
 		color: var(--white);
-		font-size: toRem(14);
+
+		@include adaptiveValue("font-size", 14, 11, 0, 1250, 768);
 	}
 }
