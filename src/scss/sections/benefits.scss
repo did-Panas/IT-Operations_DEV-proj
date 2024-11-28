@@ -1,7 +1,15 @@
 //===== HERO SECTION ===================================================
 
 .benefits {
+	@include adaptiveValue("padding-top", 120, 75, 2, 1250, 768);
+	@include adaptiveValue("padding-bottom", 130, 75, 2, 1250, 768);
+	padding: toRem(75) toRem(0) toRem(75);
+
 	background-color: var(--bg1);
+
+	@media (max-width: $mobileSmall) {
+		padding: toRem(40) toRem(0) toRem(45);
+	}
 
 	// .benefits__container
 	&__container {
@@ -145,6 +153,23 @@
 		transition: opacity 0.2s;
 	}
 
+	// .benefit-card__percent
+	&__percent {
+		position: absolute;
+		top: 0;
+		@include adaptiveValue("left", 40, 24, 0, 1250, 768);
+		z-index: 10;
+		@include adaptiveValue("width", 85, 48, 0, 1250, 768);
+		@include adaptiveValue("height", 64, 32, 0, 1250, 768);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background-color: var(--white);
+		color: var(--highlight);
+	}
+
 	// .benefit-card__bottom
 	&__bottom {
 		@include adaptiveValue("padding", 30, 15, 0, 1250, 768);
@@ -163,6 +188,17 @@
 			@include adaptiveValue("gap", 15, 8, 0, 1250, 768);
 
 			@include adaptiveValue("font-size", 18, 16, 0, 1250, 768);
+		}
+	}
+
+	// .benefit-card__txt-bl
+	&__txt-bl {
+		& p {
+			&:not(:last-child) {
+				&:not(:last-child) {
+					margin-bottom: em(8, 18);
+				}
+			}
 		}
 	}
 }

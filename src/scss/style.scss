@@ -174,12 +174,5 @@ body {
 
 	// .page__home-benefits
 	&__home-benefits {
-		@include adaptiveValue("padding-top", 120, 75, 2, 1250, 768);
-		@include adaptiveValue("padding-bottom", 130, 75, 2, 1250, 768);
-		padding: toRem(75) toRem(0) toRem(75);
-
-		@media (max-width: $mobileSmall) {
-			padding: toRem(40) toRem(0) toRem(45);
-		}
 	}
 }
