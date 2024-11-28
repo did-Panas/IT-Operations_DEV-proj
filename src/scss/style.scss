@@ -152,6 +152,7 @@ body {
 @import "footer";
 @import "sections/hero";
 @import "sections/benefits";
+@import "sections/path";
 
 // Підключення стилів окремих сторінок
 @import "home";
@@ -174,5 +175,9 @@ body {
 
 	// .page__home-benefits
 	&__home-benefits {
+	}
+
+	// .page__home-path
+	&__home-path {
 	}
 }

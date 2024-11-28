@@ -1,0 +1,108 @@
+//===== PATH SECTION ===================================================
+
+.path {
+	background-color: var(--bg2);
+
+	padding-top: toRem(110);
+	padding-bottom: toRem(120);
+
+	// .path__container
+	&__container {
+	}
+
+	// .path__wrapper
+	&__wrapper {
+	}
+
+	// .path__top
+	&__top {
+		display: flex;
+		gap: toRem(5);
+
+		margin-bottom: toRem(40);
+	}
+
+	// .path__title
+	&__title {
+		flex: 1 1 auto;
+	}
+
+	// .path__decor-img
+	&__decor-img {
+		flex: 0 0 42.105263%; /* 472/1121 */
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	// .path__list
+	&__list {
+		margin-bottom: toRem(10);
+	}
+
+	// .path__item
+	&__item {
+		&:nth-child(even) {
+			background-color: var(--white_transp-40);
+			border-radius: 5px;
+		}
+	}
+
+	// .path__bottom
+	&__bottom {
+		display: flex;
+		align-items: center;
+		gap: toRem(20);
+	}
+
+	// .path__call-action
+	&__call-action {
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: toRem(4);
+			left: 0;
+			bottom: toRem(-4);
+			background-color: var(--highlight);
+		}
+	}
+
+	// .path__bottom-btn
+	&__bottom-btn {
+	}
+}
+
+.item-path {
+	display: grid;
+	grid-template: 1fr auto / 1fr auto;
+	grid-column-gap: toRem(40);
+	grid-row-gap: toRem(10);
+
+	padding: toRem(25) toRem(40);
+
+	// .item-path__icon
+	&__icon {
+		grid-column: 1 / 2;
+		grid-row: 1 / -1;
+
+		margin-top: 7.936508%; /* 10/126 */
+
+		& img {
+			width: toRem(64);
+		}
+	}
+
+	// .item-path__title
+	&__title {
+	}
+
+	// .item-path__txt
+	&__txt {
+	}
+}
+
+//================================== >>>>> PATH SECTION ================
