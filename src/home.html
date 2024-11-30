@@ -7,9 +7,9 @@
 <body>
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
-		<main class="page">
+		<main class="page-home">
 
-			<section class="page__home-hero hero">
+			<section class="page-home__hero hero">
 				<div class="hero__container">
 					<div class="hero__wrapper wrap">
 
@@ -34,8 +34,7 @@
 					</div>
 				</div>
 			</section>
-
-			<section class="page__home-benefits benefits">
+			<section class="page-home__benefits benefits">
 				<div class="benefits__container">
 					<div class="benefits__wrapper wrap">
 
@@ -112,8 +111,7 @@
 					</div>
 				</div>
 			</section>
-
-			<section class="page__home-path path">
+			<section class="page-home__path path">
 				<div class="path__container">
 					<div class="path__wrapper wrap">
 
@@ -189,6 +187,10 @@
 					</div>
 				</div>
 			</section>
+			<section class="page-home__clients">
+				@@include('html/_clients.htm',{})
+			</section>
+
 
 		</main>
 		@@include('html/_footer.htm',{})

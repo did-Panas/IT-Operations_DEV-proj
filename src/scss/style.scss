@@ -153,15 +153,16 @@ body {
 @import "sections/hero";
 @import "sections/benefits";
 @import "sections/path";
+@import "sections/clients.scss";
 
 // Підключення стилів окремих сторінок
 @import "home";
 
 // ---------------------------------------
 
-.page {
-	// .page__home-hero
-	&__home-hero {
+.page-home {
+	// .page-home__home-hero
+	&__hero {
 		@include adaptiveValue("padding-top", 135, 70, 2, 1250, 768);
 		@include adaptiveValue("padding-bottom", 150, 80, 2, 1250, 768);
 		padding-top: toRem(70);
@@ -173,12 +174,16 @@ body {
 		}
 	}
 
-	// .page__home-benefits
-	&__home-benefits {
+	// .page-home__home-benefits
+	&__benefits {
 	}
 
-	// .page__home-path
-	&__home-path {
+	// .page-home__home-path
+	&__path {
+	}
+
+	// .page-home__clients
+	&__clients {
 	}
 }
 
@@ -189,5 +194,9 @@ body {
 
 	// .page-serv__path
 	&__path {
+	}
+
+	// .page-serv__clients
+	&__clients {
 	}
 }
