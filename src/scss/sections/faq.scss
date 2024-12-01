@@ -1,4 +1,14 @@
 .faq {
+	@include adaptiveValue("padding-top", 120, 75, 2, 1250, 768);
+	@include adaptiveValue("padding-bottom", 120, 80, 2, 1250, 768);
+	padding: toRem(75) toRem(0) toRem(80);
+
+	background-color: var(--bg1);
+
+	@media (max-width: $mobileSmall) {
+		padding: toRem(47) toRem(0) toRem(48);
+	}
+
 	// .faq__container
 	&__container {
 	}
@@ -9,10 +19,22 @@
 
 	// .faq__title
 	&__title {
+		@include adaptiveValue("margin-bottom", 65, 45, 2, 1250, 768);
+		margin-bottom: toRem(45);
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(35);
+		}
 	}
 
 	// .faq__spollers
 	&__spollers {
+		@include adaptiveValue("margin-bottom", 50, 35, 2, 1250, 375);
+		margin-bottom: toRem(35);
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(30);
+		}
 	}
 
 	// .faq__call-act
@@ -23,23 +45,75 @@
 .spollers-faq {
 	// .spollers-faq__item
 	&__item {
+		&:not(:last-child) {
+			margin-bottom: toRem(8);
+		}
 	}
 
 	// .spollers-faq__title
 	&__title {
+		position: relative;
+		z-index: 3;
+
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: center;
+		gap: toRem(13);
+
+		@include adaptiveValue("padding-top", 13, 16, 2, 1250, 768);
+		@include adaptiveValue("padding-bottom", 13, 16, 2, 1250, 768);
+		padding: toRem(16) toRem(24);
+
+		background-color: var(--white);
+		border-radius: toRem(5);
+		color: var(--primary);
+		cursor: pointer;
+		list-style: none;
+		transition:
+			background-color 0.3s ease 0s,
+			color 0.3s ease 0s;
+
+		@media (max-width: $mobileSmall) {
+			padding: toRem(18) toRem(24);
+		}
+
+		&::after {
+			content: "";
+
+			justify-self: end;
+
+			width: toRem(20);
+			height: toRem(20);
+
+			background-image: url("@img/faq/plus.svg");
+			background-position: center center; /* x y */
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			transition: all 0.3s ease 0s;
+		}
+
+		&._spoller-active {
+			background-color: var(--primary);
+			color: var(--white);
+
+			&::after {
+				width: toRem(16);
+				height: toRem(16);
+
+				background-image: url("@img/faq/minus.svg");
+			}
+		}
 	}
 
 	// .spollers-faq__body
 	&__body {
-	}
-}
+		position: relative;
+		top: toRem(-8);
 
-.call-action {
-	// .call-action__txt
-	&__txt {
-	}
+		padding: toRem(30) toRem(24) toRem(21);
 
-	// .call-action__btn
-	&__btn {
+		background-color: var(--white_transp-55);
+		border-radius: 5px;
 	}
 }

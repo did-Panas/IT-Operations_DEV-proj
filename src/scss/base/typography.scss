@@ -13,12 +13,9 @@
 	}
 }
 
-.h3 {
-	@include adaptiveValue("font-size", 30, 24, 0, 1250, 768);
-}
-
+.h3,
 .h3_lowercase {
-	font-size: toRem(30);
+	@include adaptiveValue("font-size", 30, 24, 0, 1250, 768);
 }
 
 .h4 {
