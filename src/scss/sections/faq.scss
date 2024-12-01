@@ -115,5 +115,30 @@
 
 		background-color: var(--white_transp-55);
 		border-radius: 5px;
+
+		& p {
+			&:not(:last-child) {
+				margin-bottom: em(8, 18);
+			}
+		}
+
+		.page-supp__faq &,
+		.page-bl-art__faq & {
+			display: flex;
+			gap: toRem(15);
+			align-items: center;
+		}
+
+		&._icon-logo-small:before {
+			font-size: toRem(32);
+
+			@media (max-width: $mobileSmall) {
+				display: none;
+			}
+		}
+	}
+
+	// .spollers-faq__txt
+	&__txt {
 	}
 }
