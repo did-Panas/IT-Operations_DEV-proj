@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="cs">
+@@include('html/_head.htm',{
+"title":"Blog"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page-bl-list">
+
+			<section class="page-home__hero hero">
+				<div class="hero__container">
+					<div class="hero__wrapper wrap">
+
+						<h1 class="hero__title h1">
+							Jeden partner, všechny IT služby. Jsme <span class="underline">IT Operations.</span>
+						</h1>
+						<div class="hero__txt paragraph">
+							<p>
+								Ušetříme vám čas, starosti a náklady spojené s hledáním různých dodavatelů. Postaráme se o všechny vaše IT potřeby, od každodenní podpory pro stabilní chod firmy po analýzu
+								firemních dat pro lepší rozhodování.
+							</p>
+						</div>
+						<button data-popup='#mod-cont-form' data-da=".hero__right-col,767,2" class="hero__btn button">Nezávazná konzultace</button>
+						<div class="hero__right-col">
+							<div class="hero__image interact-img">
+								<div class="interact-img__photo interact-img__photo-ibg">
+									<img src="@img/home/hero-image@1x.jpeg" srcset="@img/home/hero-image@2x.jpeg 2x" alt="Image">
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<section class="page-bl-list__guide guide">
+				<div class="guide__container">
+					<div class="guide__wrapper wrap">
+
+						<h2 class="guide__title h2">
+							<span class="underline">Kam dál?</span>
+						</h2>
+						<ul class="guide__list">
+							<li class="guide__item guide-item guide-item_primary">
+								<div class="guide-item__underlay"></div>
+								<div class="guide-item__icon guide-item__icon-ibg guide-item__icon-ibg--contain">
+									<img src="@img/guide/our-serv.svg" alt="Icon">
+								</div>
+								<h3 class="guide-item__title h3_lowercase">
+									Naše služby
+								</h3>
+								<p class="guide-item__txt paragraph">
+									Objevte, jak naše služby mohou zefektivnit vaše podnikání a ušetřit váš čas i peníze.
+								</p>
+								<a href="#!" class="guide-item__link"></a>
+							</li>
+							<li class="guide__item guide-item guide-item_highlight">
+								<div class="guide-item__underlay"></div>
+								<div class="guide-item__icon guide-item__icon-ibg guide-item__icon-ibg--contain">
+									<img src="@img/guide/about-us.svg" alt="Icon">
+								</div>
+								<h3 class="guide-item__title h3_lowercase">
+									O nás
+								</h3>
+								<p class="guide-item__txt paragraph">
+									Seznamte se s IT Operations a odborníky, kteří stojí za našimi inovativními IT řešeními.
+								</p>
+								<a href="#!" class="guide-item__link"></a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</section>
+
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+
+	@@include('html/_popup.htm',{})
+
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

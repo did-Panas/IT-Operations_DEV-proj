@@ -101,9 +101,20 @@ const mask = IMask(element, maskOptions);
 
 // ================================================================================
 
-const phoneInput = document.querySelector('#phone');
+// ===== ELEMENTS NUMBER CHECKING for GUIDE BLOCK =================================
 
+const guideList = document.querySelector('.guide__list');
 
+if (guideList) {
+	document.addEventListener("DOMContentLoaded", function (e) {
 
+		if (guideList.children.length < 3) {
+			guideList.classList.add('guide__list_lg-items');
+		} else {
+			guideList.classList.remove('guide__list_lg-items');
+		}
 
-console.log(phoneInput);
+	});
+}
+
+// ================================================================================

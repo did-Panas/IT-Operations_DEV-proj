@@ -128,6 +128,13 @@
 		}
 	}
 
+	// .guide-item_cta
+	&_cta {
+		& .guide-item__underlay {
+			background-color: var(--cta);
+		}
+	}
+
 	// .guide-item__underlay
 	&__underlay {
 		position: absolute;
