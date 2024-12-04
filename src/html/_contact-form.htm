@@ -1,0 +1,63 @@
+<div class="contact-form">
+	<div class="contact-form__container">
+		<div class="contact-form__wrapper wrap">
+
+			<div class="contact-form__top">
+
+				<h2 class="contact-form__title h2">
+					Nezávazná <span class="underline">konzultace</span>
+				</h2>
+				<div class="contact-form__logo">
+					<img src="@img/logo-dark.svg" alt="Logo">
+				</div>
+
+			</div>
+			<div class="contact-form__content">
+
+				<div class="contact-form__subtitle h3_lowercase">
+					Zanechte nám kontakt a ozveme se vám během jednoho pracovního dne.
+				</div>
+				<div class="contact-form__benefits">
+					<p>
+						Proč zvolit IT Operations:
+					</p>
+					<ul class="contact-form__benefits-list">
+						<li><span class="ok-icon _icon-ok"></span>Nezávazná úvodní konzultace zdarma</li>
+						<li><span class="ok-icon _icon-ok"></span>Komplexní IT služby na jednom místě</li>
+						<li><span class="ok-icon _icon-ok"></span>Rychlá a vstřícná IT podpora</li>
+						<li><span class="ok-icon _icon-ok"></span>Proaktivní přístup</li>
+						<li><span class="ok-icon _icon-ok"></span>Komunikujeme v češtině i angličtině</li>
+					</ul>
+				</div>
+
+			</div>
+			<form data-dev class="contact-form__form-body form" action="#">
+
+				<div class="form__inp">
+					<label for="name-cont">Jméno</label>
+					<input type="text" name="form[email]" data-required data-error="Prázdné pole" class="input" id="name-cont">
+				</div>
+
+				<div class="form__inp">
+					<label for="name-cont">E-mail</label>
+					<input type="text" name="form[name]" data-required="email" data-validate data-error="Neplatný e-mail" class="input" id="name-cont">
+				</div>
+
+				<div class="form__txtarea">
+					<label for="txtarea">Zpráva pro nás</label>
+					<textarea id="txtarea" class="input" autocomplete="off" name="form[proj-scope]"
+						placeholder='Stručně popište, s čím vám můžeme pomoci. Například: "Potřebujeme zrychlit naše počítače" nebo "Nejsme spokojeni s naším IT". Pár slov stačí, detaily společně probereme.'></textarea>
+				</div>
+
+				<p class="form__priv-pol">
+					Vaše osobní údaje (jméno a e-mail) budou použity výhradně pro účely zpracování vaší nezávazné poptávky. Více informací o zpracování osobních údajů naleznete v našich Zásadách ochrany
+					osobních údajů.
+				</p>
+
+				<button type="submit" class="form__submit button button--sm">Odeslat zprávu</button>
+
+			</form>
+
+		</div>
+	</div>
+</div>
