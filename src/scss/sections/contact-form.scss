@@ -1,14 +1,31 @@
 .contact-form {
+	@include adaptiveValue("padding-top", 115, 75, 2, 1250, 768);
+	@include adaptiveValue("padding-bottom", 130, 80, 2, 1250, 768);
+	padding: toRem(75) toRem(0) toRem(80);
+
+	@media (max-width: $mobileSmall) {
+		padding: toRem(45) toRem(0) toRem(50);
+	}
+
 	// .contact-form__container
 	&__container {
 	}
 
 	// .contact-form__wrapper
 	&__wrapper {
+		display: grid;
+		grid-template: auto auto 1fr / auto 57.45614%; /* 655/1140 */
+		grid-gap: toRem(40) toRem(60);
 	}
 
 	// .contact-form__top
 	&__top {
+		grid-column: 1 / -1;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: toRem(100);
 	}
 
 	// .contact-form__title
@@ -17,43 +34,110 @@
 
 	// .contact-form__logo
 	&__logo {
-	}
-
-	// .contact-form__content
-	&__content {
+		& img {
+			display: block;
+			width: toRem(203);
+		}
 	}
 
 	// .contact-form__subtitle
 	&__subtitle {
+		margin-top: toRem(18);
 	}
 
 	// .contact-form__benefits
 	&__benefits {
+		& p {
+			margin-bottom: toRem(25);
+
+			@media (max-width: $mobileSmall) {
+				margin-bottom: toRem(20);
+			}
+		}
 	}
 
 	// .contact-form__benefits-list
 	&__benefits-list {
+		& li {
+			display: flex;
+			align-items: baseline;
+			gap: toRem(12);
+
+			&:not(:last-child) {
+				margin-bottom: toRem(22);
+			}
+		}
 	}
 
 	// .contact-form__form-body
 	&__form-body {
+		grid-row: 2 / -1;
+		grid-column: 2 / -1;
+
+		display: grid;
+		grid-template: auto auto auto 1fr / 1fr 1fr;
+		grid-gap: toRem(12) toRem(17);
 	}
 }
 
 .form {
-	// .form__inp
-	&__inp {
+	// .form__item
+	&__item {
+		display: grid;
+		gap: toRem(7);
+
+		& label {
+			color: var(--black);
+		}
+
+		& input {
+			height: toRem(44);
+			padding: toRem(0) toRem(13);
+		}
+
+		& textarea {
+			height: toRem(212);
+			padding: toRem(13) toRem(15);
+
+			&::placeholder {
+				max-width: toRem(541);
+
+				color: #bababa;
+				line-height: 160%;
+			}
+		}
+
+		& input,
+		& textarea {
+			border: 1px solid var(--highlight);
+			border-radius: toRem(5);
+		}
 	}
 
 	// .form__txtarea
 	&__txtarea {
+		grid-column: 1 / -1;
+
+		margin-top: toRem(10);
+
+		& textarea {
+			resize: none;
+		}
 	}
 
 	// .form__priv-pol
 	&__priv-pol {
+		grid-column: 1 / -1;
+
+		margin-bottom: toRem(13);
+
+		color: var(--black);
+		font-size: toRem(12);
+		line-height: 150%;
 	}
 
 	// .form__submit
 	&__submit {
+		justify-self: start;
 	}
 }
