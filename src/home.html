@@ -192,6 +192,88 @@
 			<section class="page-home__clients">
 				@@include('html/_clients.htm',{})
 			</section>
+
+			<section class="page-home__references references">
+				<div class="references__container">
+					<div class="references__wrapper wrap">
+
+						<h2 class="references__title h2">
+							Co o nás říkají <span class="underline">klienti?</span>
+						</h2>
+						<div class="references__items">
+
+							<article class="references__item ref-card">
+								<p class="ref-card__txt">
+									IT Operations nám pomohli zmodernizovat naši zastaralou infrastrukturu. Díky nim jsme zvýšili produktivitu o 30% a ušetřili značné náklady na údržbu.
+								</p>
+								<p class="ref-card__author">
+									Jan Novák, IT manažer
+								</p>
+								<div class="ref-card__media">
+									<div class="ref-card__photo">
+										<img src="@img/references/photo-01@1x.jpg" srcset="@img/references/photo-01@2x.jpg 2x" alt="Image">
+									</div>
+									<div class="ref-card__logo">
+										<img src="@img/references/logo-01@1x.jpg" srcset="@img/references/logo-01@2x.jpg 2x" alt="Logo">
+									</div>
+								</div>
+							</article>
+							<article class="references__item ref-card">
+								<p class="ref-card__txt">
+									Díky IT Operations jsme úspěšně migrovali naši celou IT infrastrukturu do cloudu, což nám přineslo větší flexibilitu a škálovatelnost.
+								</p>
+								<p class="ref-card__author">
+									Jarmila Veselá, majitelka
+
+								</p>
+								<div class="ref-card__media">
+									<div class="ref-card__photo">
+										<img src="@img/references/photo-02@1x.jpg" srcset="@img/references/photo-02@2x.jpg 2x" alt="Image">
+									</div>
+									<div class="ref-card__logo">
+										<img src="@img/references/logo-02@1x.jpg" srcset="@img/references/logo-02@2x.jpg 2x" alt="Logo">
+									</div>
+								</div>
+							</article>
+							<article class="references__item ref-card">
+								<p class="ref-card__txt">
+									IT Operations nám pomohli zavést moderní kybernetická bezpečnostní opatření, díky čemuž jsme dosáhli nulového počtu bezpečnostních incidentů za poslední rok.
+								</p>
+								<p class="ref-card__author">
+									Jiřina Veliká, jednatelka
+								</p>
+								<div class="ref-card__media">
+									<div class="ref-card__photo">
+										<img src="@img/references/photo-03@1x.jpg" srcset="@img/references/photo-03@2x.jpg 2x" alt="Image">
+									</div>
+									<div class="ref-card__logo">
+										<img src="@img/references/logo-03@1x.jpg" srcset="@img/references/logo-03@2x.jpg 2x" alt="Logo">
+									</div>
+								</div>
+							</article>
+							<article class="references__item ref-card">
+								<p class="ref-card__txt">
+									Po implementaci nového systému IT správy s pomocí IT Operations jsme zkrátili dobu reakce na technické problémy o 40 %.
+								</p>
+								<p class="ref-card__author">
+									Miroslav Zapletal, provozní ředitel
+								</p>
+								<div class="ref-card__media">
+									<div class="ref-card__photo">
+										<img src="@img/references/photo-04@1x.jpg" srcset="@img/references/photo-04@2x.jpg 2x" alt="Image">
+									</div>
+									<div class="ref-card__logo">
+										<img src="@img/references/logo-04@1x.jpg" srcset="@img/references/logo-04@2x.jpg 2x" alt="Logo">
+									</div>
+								</div>
+							</article>
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+
 			<section class="page-home__faq faq">
 				<div class="faq__container">
 					<div class="faq__wrapper wrap">
@@ -378,7 +460,6 @@
 			<section class="page-home__contact-form">
 				@@include('html/_contact-form.htm',{})
 			</section>
-
 
 		</main>
 		@@include('html/_footer.htm',{})
