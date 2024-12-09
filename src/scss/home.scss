@@ -1,6 +1,8 @@
 //===== REFERENCES SECTION ===================================================
 
 .references {
+	background-color: var(--bg2);
+
 	// .references__container
 	&__container {
 	}
@@ -11,10 +13,22 @@
 
 	// .references__title
 	&__title {
+		@include adaptiveValue("margin-bottom", 50, 45, 2, 1250, 768);
+		margin-bottom: toRem(45);
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(57);
+		}
 	}
 
 	// .references__items
 	&__items {
+		display: grid;
+		grid-gap: toRem(16);
+
+		@media (min-width: em(550)) {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	// .references__item
@@ -23,8 +37,50 @@
 }
 
 .ref-card {
+	position: relative;
+
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	@include adaptiveValue("grid-gap", 16, 11, 2, 1250, 768);
+	grid-gap: toRem(12);
+
+	max-width: toRem(570);
+	@include adaptiveValue("padding-top", 55, 20, 2, 1250, 768);
+	@include adaptiveValue("padding-right", 63, 20, 2, 1250, 768);
+	@include adaptiveValue("padding-top", 65, 30, 2, 1250, 768);
+	@include adaptiveValue("padding-left", 63, 24, 2, 1250, 768);
+	padding: toRem(20) toRem(20) toRem(30) toRem(24);
+
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: toRem(5);
+
+	@media (max-width: em(549.98)) {
+		grid-gap: toRem(16);
+		justify-self: center;
+
+		max-width: toRem(350);
+		padding: toRem(24) toRem(20) toRem(30);
+	}
+
+	&._icon-quotes:before {
+		position: absolute;
+		top: toRem(-9);
+		@include adaptiveValue("left", 63, 24, 2, 1250, 768);
+		left: toRem(24);
+
+		font-size: toRem(23);
+
+		@media (max-width: em(549.98)) {
+			left: toRem(20);
+		}
+	}
+
 	// .ref-card__txt
 	&__txt {
+		margin-bottom: toRem(4);
+
+		color: var(--black);
+		line-height: 144%;
 	}
 
 	// .ref-card__author
@@ -33,14 +89,38 @@
 
 	// .ref-card__media
 	&__media {
+		display: flex;
+		@include adaptiveValue("gap", 15, 7, 0, 1250, 768);
 	}
 
 	// .ref-card__photo
 	&__photo {
+		aspect-ratio: 1 / 1;
+		@include adaptiveValue("width", 121, 85, 0, 1250, 768);
+
+		border: 4px solid var(--white);
+		border-radius: toRem(5);
+
+		@media (max-width: $tablet) {
+			border: 2px solid var(--white);
+		}
 	}
 
 	// .ref-card__logo
 	&__logo {
+		flex: 1 1 auto;
+
+		padding: toRem(20) toRem(30);
+
+		background-color: var(--white);
+
+		& img {
+			height: 68.992248%; /* 89/129 */
+			max-width: 90%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 }
 
