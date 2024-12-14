@@ -214,6 +214,17 @@ body {
 }
 
 .page-serv {
+	// .page-serv__hero
+	&__hero {
+		@include adaptiveValue("padding-top", 46, 20, 0, 1250, 768);
+		@include adaptiveValue("padding-bottom", 144, 83, 2, 1250, 768);
+		padding-bottom: toRem(83);
+
+		@media (max-width: em(629)) {
+			padding-bottom: toRem(52);
+		}
+	}
+
 	// .page-serv__benefits
 	&__benefits {
 	}

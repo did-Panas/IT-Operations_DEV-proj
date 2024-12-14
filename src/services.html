@@ -9,31 +9,44 @@
 		@@include('html/_header.htm',{})
 		<main class="page-serv">
 
-			<section class="page-serve__hero hero">
+			<section class="page-serv__hero hero">
 				<div class="hero__container">
 					<div class="hero__wrapper wrap">
 
+						<nav class="hero__breadcrumbs breadcrumbs" aria-label="breadcrumb">
+							<ul class="breadcrumbs__list">
+								<li class="breadcrumbs__item">
+									<a href="home.html">IT Operations</a>
+									<span aria-hidden="true">></span>
+								</li>
+								<li class="breadcrumbs__item" aria-current=”page”>
+									Služby
+								</li>
+							</ul>
+						</nav>
 						<h1 class="hero__title h1">
-							Jeden partner, všechny IT služby. Jsme <span class="underline">IT Operations.</span>
+							Kompletní IT služby pro <span class="underline">firmy</span>
 						</h1>
 						<div class="hero__txt paragraph">
 							<p>
-								Ušetříme vám čas, starosti a náklady spojené s hledáním různých dodavatelů. Postaráme se o všechny vaše IT potřeby, od každodenní podpory pro stabilní chod firmy po analýzu
-								firemních dat pro lepší rozhodování.
+								Na této stránce najdete přehled našich klíčových IT služeb. Máme pro vaši firmu řešení, ať už vás trápí každodenní technické potíže nebo plánujete velkou modernizaci.
 							</p>
 						</div>
-						<button data-popup='#mod-cont-form' data-da=".hero__right-col,767,2" class="hero__btn button">Nezávazná konzultace</button>
 						<div class="hero__right-col">
 							<div class="hero__image interact-img">
 								<div class="interact-img__photo interact-img__photo-ibg">
-									<img src="@img/home/hero-image@1x.jpeg" srcset="@img/home/hero-image@2x.jpeg 2x" alt="Image">
+									<img src="@img/services/hero-image@1x.jpg" srcset="@img/services/hero-image@2x.jpg 2x" alt="Image">
 								</div>
 							</div>
+							<button data-popup='#mod-cont-form' class="hero__btn button">Nezávazná konzultace</button>
 						</div>
 
 					</div>
 				</div>
 			</section>
+
+
+
 			<section class="page-serv__benefits benefits">
 				<div class="benefits__container">
 					<div class="benefits__wrapper wrap">
