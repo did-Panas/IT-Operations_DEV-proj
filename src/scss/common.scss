@@ -57,7 +57,7 @@
 	}
 }
 
-//===== Call to Action - block==========================================
+//===== Call to Action - block =======================================
 
 .call-action {
 	display: flex;
@@ -106,5 +106,47 @@
 
 	// .call-action__btn
 	&__btn {
+	}
+}
+
+//===== Breadcrumbs ==================================================
+
+.breadcrumbs {
+	// .breadcrumbs__list
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: toRem(5);
+	}
+
+	// .breadcrumbs__item
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: toRem(5);
+
+		line-height: 130%;
+
+		// .breadcrumbs__item_home
+		&_home {
+			font-weight: 300;
+		}
+
+		// .breadcrumbs__item_curr
+		&_curr {
+			font-weight: 700;
+		}
+
+		& a {
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		& span {
+			font-weight: 300;
+		}
 	}
 }

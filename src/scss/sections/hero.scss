@@ -11,19 +11,36 @@
 	// .hero__wrapper
 	&__wrapper {
 		display: grid;
-		@include adaptiveValue("column-gap", 100, 35, 0, 1250, 768);
 
-		grid-template: auto auto auto / auto 1fr;
-		row-gap: toRem(43);
+		grid-template: auto 1fr / 1fr 16.140351%; /* 184/1140 */
+		@include adaptiveValue("column-gap", 100, 75, 0, 1250, 768);
 
-		@media (max-width: em(629)) {
-			grid-template: repeat(4, auto) / 1fr;
+		@media (max-width: $tablet) {
+			grid-template: auto 1fr / 1fr 22.7%;
 		}
+
+		@media (max-width: em(629.98)) {
+			grid-template: repeat(3, auto) / 1fr;
+		}
+
+		// grid-template: auto auto auto / auto 1fr;
+		// row-gap: toRem(43);
+		// @include adaptiveValue("column-gap", 100, 35, 0, 1250, 768);
+		// @media (max-width: em(629)) {
+		// 	grid-template: repeat(4, auto) / 1fr;
+		// }
 	}
 
 	// .hero__breadcrumbs
 	&__breadcrumbs {
-		margin-bottom: toRem(10);
+		grid-column: 1 / -1;
+
+		@include adaptiveValue("margin-bottom", 53, 58, 2, 1250, 768);
+		margin-bottom: toRem(53);
+
+		@media (max-width: em(629.98)) {
+			margin-bottom: toRem(25);
+		}
 	}
 
 	// .hero__title
@@ -84,7 +101,7 @@
 
 .page-home__hero {
 	& .hero__wrapper {
-		grid-template: auto auto auto / 1fr 32.280702%; /* 368/1140 */
+		grid-template: auto auto auto / 1fr 32.280702%;
 		row-gap: toRem(20);
 		@include adaptiveValue("column-gap", 100, 35, 0, 1250, 768);
 
@@ -164,8 +181,22 @@
 		}
 
 		&.interact-img {
+			// @include adaptiveValue("width", 368, 216, 2, 1250, 768);
+			// width: toRem(216);
 			max-width: toRem(368);
 		}
+	}
+}
+
+.page-bl-list__hero {
+	& .hero__title {
+		@media (max-width: em(629.98)) {
+			margin-bottom: toRem(60);
+		}
+	}
+
+	& .hero__image {
+		justify-self: center;
 	}
 }
 
@@ -174,11 +205,6 @@
 
 	aspect-ratio: 1 / 1;
 	width: 100%;
-	max-width: toRem(184);
-
-	@media (max-width: $mobile) {
-		max-width: toRem(153);
-	}
 
 	@media (max-width: em(629.98)) {
 		max-width: toRem(368);
@@ -190,6 +216,9 @@
 		inset: 0;
 		background-color: var(--white);
 		border-radius: 20px;
+
+		transform: rotate(2deg);
+		transition: transform 0.3s ease 0s;
 	}
 
 	&::after {
@@ -224,40 +253,10 @@
 	@media (any-hover: hover) {
 		&:hover {
 			&::after,
+			&::before,
 			& .interact-img__photo {
 				transform: rotate(0deg);
 			}
-		}
-	}
-}
-
-.breadcrumbs {
-	// .breadcrumbs__list
-	&__list {
-		display: flex;
-		gap: toRem(5);
-	}
-
-	// .breadcrumbs__item
-	&__item {
-		display: flex;
-		align-items: center;
-		gap: toRem(5);
-
-		font-weight: 700;
-		line-height: 130%;
-
-		& a {
-			@media (any-hover: hover) {
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
-
-		& a,
-		& span {
-			font-weight: 300;
 		}
 	}
 }

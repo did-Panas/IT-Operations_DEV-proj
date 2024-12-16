@@ -9,31 +9,46 @@
 		@@include('html/_header.htm',{})
 		<main class="page-supp">
 
-			<section class="page-home__hero hero">
+			<section class="page-supp__hero hero">
 				<div class="hero__container">
 					<div class="hero__wrapper wrap">
 
+						<nav class="hero__breadcrumbs breadcrumbs" aria-label="breadcrumb">
+							<ul class="breadcrumbs__list">
+								<li class="breadcrumbs__item breadcrumbs__item_home">
+									<a href="home.html">IT Operations</a>
+									<span aria-hidden="true">></span>
+								</li>
+								<li class="breadcrumbs__item">
+									<a href="home.html">Služby</a>
+									<span aria-hidden="true">></span>
+								</li>
+								<li class="breadcrumbs__item breadcrumbs__item_curr" aria-current=”page”>
+									IT podpora
+								</li>
+							</ul>
+						</nav>
 						<h1 class="hero__title h1">
-							Jeden partner, všechny IT služby. Jsme <span class="underline">IT Operations.</span>
+							Firemní <span class="underline">IT podpora</span>
 						</h1>
 						<div class="hero__txt paragraph">
 							<p>
-								Ušetříme vám čas, starosti a náklady spojené s hledáním různých dodavatelů. Postaráme se o všechny vaše IT potřeby, od každodenní podpory pro stabilní chod firmy po analýzu
-								firemních dat pro lepší rozhodování.
+								Poskytujeme spolehlivou IT podporu kdykoliv a kdekoliv ji potřebujete. Náš tým je připraven pomoci na dálku nebo osobně, abychom zajistili plynulý chod vašich IT systémů.
+								Klademe důraz na jasnou komunikaci a rychlé řešení problémů, přičemž naše služby přizpůsobujeme vašim specifickým potřebám. 
 							</p>
 						</div>
-						<button data-popup='#mod-cont-form' data-da=".hero__right-col,767,2" class="hero__btn button">Nezávazná konzultace</button>
-						<div class="hero__right-col">
-							<div class="hero__image interact-img">
-								<div class="interact-img__photo interact-img__photo-ibg">
-									<img src="@img/home/hero-image@1x.jpeg" srcset="@img/home/hero-image@2x.jpeg 2x" alt="Image">
-								</div>
+						<div class="hero__image interact-img">
+							<div class="interact-img__photo interact-img__photo-ibg">
+								<img src="@img/services/hero-image@1x.jpg" srcset="@img/services/hero-image@2x.jpg 2x" alt="Image">
 							</div>
 						</div>
 
 					</div>
 				</div>
 			</section>
+
+
+
 
 			<section class="page-supp__faq faq">
 				<div class="faq__container">
