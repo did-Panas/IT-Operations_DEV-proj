@@ -1,0 +1,132 @@
+.services {
+	background-color: var(--bg2);
+
+	// .services__container
+	&__container {
+	}
+
+	// .services__wrapper
+	&__wrapper {
+	}
+
+	// .services__title
+	&__title {
+		@include adaptiveValue("margin-bottom", 74, 44, 2, 1250, 768);
+		margin-bottom: toRem(44);
+
+		@media (max-width: em(629.98)) {
+			margin-bottom: toRem(40);
+		}
+	}
+
+	// .services__list
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: toRem(16);
+
+		@media (max-width: em(1099.98)) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media (max-width: em(629.98)) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: toRem(8);
+		}
+
+		@media (max-width: em(359.98)) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	// .services__item
+	&__item {
+	}
+}
+
+.serv-item {
+	background-color: var(--white_transp-95);
+	border-radius: toRem(5);
+	box-shadow: none;
+
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--white_transp-55);
+			-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+			-moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+			box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+
+			& .serv-item__bottom-panel {
+				background-color: var(--highlight_hover);
+			}
+		}
+	}
+
+	// .serv-item__link
+	&__link {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 25, 10, 0, 1250, 768);
+		justify-content: space-between;
+		align-items: center;
+
+		height: 100%;
+	}
+
+	// .serv-item__icon
+	&__icon {
+		width: 29.411765%; /* 80/272 */
+		@include adaptiveValue("padding-top", 37, 29, 2, 1250, 768);
+		padding-top: toRem(29);
+
+		@media (max-width: em(629.98)) {
+			width: 20.512821%; /* 32/156 */
+			padding-top: toRem(16);
+		}
+
+		& svg {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	// .serv-item__title
+	&__title {
+		padding: toRem(0) toRem(22);
+
+		text-align: center;
+	}
+
+	// .serv-item__bottom-panel
+	&__bottom-panel {
+		align-self: stretch;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include adaptiveValue("height", 32, 25, 2, 1250, 768);
+		height: toRem(25);
+
+		background-color: var(--highlight);
+		border-radius: toRem(5);
+
+		transition: background-color 0.3s ease 0s;
+
+		@media (max-width: em(629.98)) {
+			height: toRem(18);
+		}
+
+		&._icon-plus:before {
+			color: var(--white);
+
+			font-size: toRem(18);
+
+			@media (max-width: em(629.98)) {
+				font-size: toRem(10);
+			}
+		}
+	}
+}

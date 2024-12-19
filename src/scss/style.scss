@@ -160,6 +160,7 @@ body {
 
 // Підключення стилів окремих сторінок
 @import "home";
+@import "services";
 
 // ---------------------------------------
 
@@ -232,6 +233,20 @@ body {
 
 	// .page-serv__benefits
 	&__benefits {
+	}
+
+	// .page-serv__services
+	&__services {
+		@include adaptiveValue("padding-top", 114, 75, 2, 1250, 768);
+		padding-top: toRem(75);
+		@include adaptiveValue("padding-bottom", 128, 80, 2, 1250, 768);
+		padding-bottom: toRem(80);
+
+		// ???????????
+		@media (max-width: $mobileSmall) {
+			padding-top: toRem(40);
+			padding-bottom: toRem(48);
+		}
 	}
 
 	// .page-serv__path
