@@ -460,3 +460,40 @@ body::after {
 }
 
 // ----- Services-block - popups -------------------
+
+.popup-serv {
+	// .popup-serv__close
+	&__close {
+	}
+
+	// .popup-serv__list
+	&__list {
+	}
+
+	// .popup-serv__item
+	&__item {
+		// .popup-serv__item_highlighted
+		&_highlighted {
+		}
+	}
+
+	// .popup-serv__icon
+	&__icon {
+	}
+
+	// .popup-serv__title-item
+	&__title-item {
+	}
+
+	// .popup-serv__txt
+	&__txt {
+	}
+
+	// .popup-serv__btn-panel
+	&__btn-panel {
+	}
+
+	// .popup-serv__btn
+	&__btn {
+	}
+}
