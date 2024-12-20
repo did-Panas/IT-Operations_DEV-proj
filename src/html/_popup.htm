@@ -3,103 +3,105 @@
 	<div class="popup__wrapper">
 		<div class="popup__content">
 
-			<div class="popup__column">
+			<div class="popup-hero">
+				<div class="popup-hero__column">
 
-				<button data-close type="button" class="popup__close _icon-close"></button>
+					<button data-close type="button" class="popup-hero__close _icon-close"></button>
 
-				<div class="popup__txt-bl">
-					<h2 class="popup__title h2">
-						Nezávazná
-						<span class="underline">konzultace</span>
-					</h2>
-					<p class="popup__subtitle">
-						Jeden partner, všechny služby pro vaše firemní IT. <nobr>Jsme<span>
-								<img src="@img/logo-dark.svg" alt="Logo">
-							</span></nobr>
-					</p>
-				</div>
-
-				<div data-tabs class="popup__forms-block forms-block">
-					<nav data-tabs-titles class="forms-block__navigation">
-						<button type="button" class="forms-block__title paragraph _tab-active">
-							<span></span>
-							<p>Zavolejte mi</p>
-						</button>
-						<button type="button" class="forms-block__title paragraph">
-							<span></span>
-							<p>Napište mi</p>
-						</button>
-					</nav>
-					<div data-tabs-body class="forms-block__content">
-
-						<div class="forms-block__item">
-							<form data-dev class="forms-block__body callb-form" action="#">
-
-								<div class="callb-form__inp">
-									<label for="name-p">Jméno</label>
-									<input type="text" name="form[email]" data-required data-error="Prázdné pole" class="input" id="name-p">
-								</div>
-
-								<div class="callb-form__inp">
-									<label for="phone">Telefon</label>
-									<input type="text" name="form[phone]" data-required="phone" data-validate data-error="Neplatné telefonní číslo" class="input" id="phone">
-								</div>
-
-								<button type="submit" class="callb-form__submit button button--sm">Odeslat</button>
-
-								<p class="callb-form__priv-pol">
-									Vaše osobní údaje (jméno a e-mail) budou použity výhradně pro účely zpracování vaší nezávazné poptávky. Více informací o zpracování osobních údajů naleznete v našich <a
-										href="#!">Zásadách ochrany osobních údajů</a>.
-								</p>
-
-							</form>
-						</div>
-
-						<div class="forms-block__item">
-							<form data-dev class="forms-block__body callb-form" action="#">
-
-								<div class="callb-form__inp">
-									<label for="name-mail">Jméno</label>
-									<input type="text" name="form[name]" data-required data-error="Prázdné pole" class="input" id="name-mail">
-								</div>
-
-								<div class="callb-form__inp">
-									<label for="name-m">E-mail</label>
-									<input type="text" name="form[name]" data-required="email" data-validate data-error="Neplatný e-mail" class="input" id="name-m">
-								</div>
-
-								<button type="submit" class="callb-form__submit button button--sm">Odeslat</button>
-
-								<p class="callb-form__priv-pol">
-									Vaše osobní údaje (jméno a e-mail) budou použity výhradně pro účely zpracování vaší nezávazné poptávky. Více informací o zpracování osobních údajů naleznete v našich <a
-										href="#!">Zásadách ochrany osobních údajů</a>.
-								</p>
-
-							</form>
-						</div>
-
-
+					<div class="popup-hero__txt-bl">
+						<h2 class="popup-hero__title h2">
+							Nezávazná
+							<span class="underline">konzultace</span>
+						</h2>
+						<p class="popup-hero__subtitle">
+							Jeden partner, všechny služby pro vaše firemní IT. <nobr>Jsme<span>
+									<img src="@img/logo-dark.svg" alt="Logo">
+								</span></nobr>
+						</p>
 					</div>
+
+					<div data-tabs class="popup-hero__forms-block forms-block">
+						<nav data-tabs-titles class="forms-block__navigation">
+							<button type="button" class="forms-block__title paragraph _tab-active">
+								<span></span>
+								<p>Zavolejte mi</p>
+							</button>
+							<button type="button" class="forms-block__title paragraph">
+								<span></span>
+								<p>Napište mi</p>
+							</button>
+						</nav>
+						<div data-tabs-body class="forms-block__content">
+
+							<div class="forms-block__item">
+								<form data-dev class="forms-block__body callb-form" action="#">
+
+									<div class="callb-form__inp">
+										<label for="name-p">Jméno</label>
+										<input type="text" name="form[email]" data-required data-error="Prázdné pole" class="input" id="name-p">
+									</div>
+
+									<div class="callb-form__inp">
+										<label for="phone">Telefon</label>
+										<input type="text" name="form[phone]" data-required="phone" data-validate data-error="Neplatné telefonní číslo" class="input" id="phone">
+									</div>
+
+									<button type="submit" class="callb-form__submit button button--sm">Odeslat</button>
+
+									<p class="callb-form__priv-pol">
+										Vaše osobní údaje (jméno a e-mail) budou použity výhradně pro účely zpracování vaší nezávazné poptávky. Více informací o zpracování osobních údajů naleznete v našich <a
+											href="#!">Zásadách ochrany osobních údajů</a>.
+									</p>
+
+								</form>
+							</div>
+
+							<div class="forms-block__item">
+								<form data-dev class="forms-block__body callb-form" action="#">
+
+									<div class="callb-form__inp">
+										<label for="name-mail">Jméno</label>
+										<input type="text" name="form[name]" data-required data-error="Prázdné pole" class="input" id="name-mail">
+									</div>
+
+									<div class="callb-form__inp">
+										<label for="name-m">E-mail</label>
+										<input type="text" name="form[name]" data-required="email" data-validate data-error="Neplatný e-mail" class="input" id="name-m">
+									</div>
+
+									<button type="submit" class="callb-form__submit button button--sm">Odeslat</button>
+
+									<p class="callb-form__priv-pol">
+										Vaše osobní údaje (jméno a e-mail) budou použity výhradně pro účely zpracování vaší nezávazné poptávky. Více informací o zpracování osobních údajů naleznete v našich <a
+											href="#!">Zásadách ochrany osobních údajů</a>.
+									</p>
+
+								</form>
+							</div>
+
+
+						</div>
+					</div>
+
 				</div>
+				<div class="popup-hero__column">
 
-			</div>
-			<div class="popup__column">
+					<p data-da=".popup-hero__txt-bl,991,2" class="popup__descript-txt">
+						Zanechte nám kontakt a ozveme se
+						vám během jednoho pracovního dne.
+					</p>
+					<div class="popup-hero__benefits benefits-popup">
+						<h3 data-da=".popup-hero__txt-bl,991,3" class="benefits-popup__title">Proč zvolit IT Operations:</h3>
+						<ul data-da=".popup-hero__txt-bl,991,4" class="benefits-popup__list">
+							<li class="benefits-popup__item"><span class="ok-icon _icon-ok"></span>Komplexní IT služby na jednom místě</li>
+							<li class="benefits-popup__item"><span class="ok-icon _icon-ok"></span>Nezávazná úvodní konzultace zdarma</li>
+							<li class="benefits-popup__item"><span class="ok-icon _icon-ok"></span>Rychlá a vstřícná IT podpora</li>
+							<li class="benefits-popup__item"><span class="ok-icon _icon-ok"></span>Proaktivní přístup</li>
+							<li class="benefits-popup__item"><span class="ok-icon _icon-ok"></span>Komunikujeme v češtině i angličtině</li>
+						</ul>
+					</div>
 
-				<p data-da=".popup__txt-bl,991,2" class="popup__descript-txt">
-					Zanechte nám kontakt a ozveme se
-					vám během jednoho pracovního dne.
-				</p>
-				<div class="popup__benefits benefits-popup">
-					<h3 data-da=".popup__txt-bl,991,3" class="benefits-popup__title">Proč zvolit IT Operations:</h3>
-					<ul data-da=".popup__txt-bl,991,4" class="benefits-popup__list">
-						<li class="benefits-popup__item"><span class="ok-icon _icon-ok"></span>Komplexní IT služby na jednom místě</li>
-						<li class="benefits-popup__item"><span class="ok-icon _icon-ok"></span>Nezávazná úvodní konzultace zdarma</li>
-						<li class="benefits-popup__item"><span class="ok-icon _icon-ok"></span>Rychlá a vstřícná IT podpora</li>
-						<li class="benefits-popup__item"><span class="ok-icon _icon-ok"></span>Proaktivní přístup</li>
-						<li class="benefits-popup__item"><span class="ok-icon _icon-ok"></span>Komunikujeme v češtině i angličtině</li>
-					</ul>
 				</div>
-
 			</div>
 
 		</div>

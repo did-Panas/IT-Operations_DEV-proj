@@ -63,19 +63,14 @@ body::after {
 	}
 }
 
-// ----- Custom Settings -------------------------
+// ----- Custom Settings --------------------------
 
-.popup {
-	// .popup__wrapper
-	&__wrapper {
-	}
+// ----- Hero-block - popup -----------------------
 
-	// .popup__content
-	&__content {
-		display: flex;
-	}
+.popup-hero {
+	display: flex;
 
-	// .popup__column
+	// .popup-hero__column
 	&__column {
 		&:first-child {
 			position: relative;
@@ -115,7 +110,7 @@ body::after {
 		}
 	}
 
-	// .popup__close
+	// .popup-hero__close
 	&__close {
 		position: absolute;
 		top: toRem(5);
@@ -145,7 +140,7 @@ body::after {
 		}
 	}
 
-	// .popup__txt-bl
+	// .popup-hero__txt-bl
 	&__txt-bl {
 		display: grid;
 		grid-row-gap: toRem(30);
@@ -169,13 +164,13 @@ body::after {
 		}
 	}
 
-	// .popup__title
+	// .popup-hero__title
 	&__title {
 		@media (max-width: em(599.98)) {
 			margin-bottom: toRem(5);
 		}
 	}
-	// .popup__subtitle
+	// .popup-hero__subtitle
 	&__subtitle {
 		max-width: toRem(565);
 
@@ -197,11 +192,11 @@ body::after {
 		}
 	}
 
-	// .popup__forms-block
+	// .popup-hero__forms-block
 	&__forms-block {
 	}
 
-	// .popup__descript-txt
+	// .popup-hero__descript-txt
 	&__descript-txt {
 		line-height: 144%;
 
@@ -216,7 +211,7 @@ body::after {
 		}
 	}
 
-	// .popup__benefits
+	// .popup-hero__benefits
 	&__benefits {
 	}
 }
@@ -463,3 +458,5 @@ body::after {
 		}
 	}
 }
+
+// ----- Services-block - popups -------------------
