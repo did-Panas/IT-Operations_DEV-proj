@@ -108,7 +108,7 @@ class Popup {
 	eventsPopup() {
 		// Клік по всьому документі
 		document.addEventListener("click", function (e) {
-			// Клік по кнопці "відкрити"
+			// Клік по кнопці "відкрити"			
 			const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
 			if (buttonOpen) {
 				e.preventDefault();

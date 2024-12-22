@@ -19,7 +19,7 @@
 }
 
 .h4 {
-	font-size: toRem(25);
+	@include adaptiveValue("font-size", 25, 20, 0, 1250, 768);
 }
 
 .h3_services {

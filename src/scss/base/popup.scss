@@ -54,7 +54,6 @@ body::after {
 	visibility: hidden;
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
-	background-color: var(--white);
 	width: 100%;
 	max-width: 1160px;
 	border-radius: 5px;
@@ -69,6 +68,9 @@ body::after {
 
 .popup-hero {
 	display: flex;
+
+	background-color: var(--white_transp-95);
+	border-radius: toRem(5);
 
 	// .popup-hero__column
 	&__column {
@@ -462,27 +464,90 @@ body::after {
 // ----- Services-block - popups -------------------
 
 .popup-serv {
+	position: relative;
+
+	@include adaptiveValue("padding", 35, 32, 2, 1250, 768);
+	padding: toRem(32);
+
+	background-color: var(--white_transp-95);
+	border-radius: toRem(5);
+
+	@media (max-width: $mobileSmall) {
+		padding: toRem(24);
+	}
+
 	// .popup-serv__close
 	&__close {
+		position: absolute;
+		@include adaptiveValue("top", 16, 10, 0, 1250, 768);
+		@include adaptiveValue("right", 16, 10, 0, 1250, 768);
+		z-index: 50;
+
+		&._icon-close::before {
+			font-size: toRem(16);
+
+			transition: color 0.3s ease 0s;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&._icon-close::before {
+					color: var(--highlight);
+				}
+			}
+		}
 	}
 
 	// .popup-serv__list
 	&__list {
+		margin-bottom: toRem(35);
 	}
 
 	// .popup-serv__item
 	&__item {
+		display: grid;
+		grid-template: auto 1fr / auto 1fr;
+		grid-column-gap: toRem(35);
+
+		&:not(:last-child) {
+			margin-bottom: toRem(30);
+		}
+
+		@media (max-width: $mobileSmall) {
+			grid-column-gap: toRem(16);
+		}
+
 		// .popup-serv__item_highlighted
 		&_highlighted {
+			& svg path {
+				fill: var(--primary);
+			}
+
+			& .popup-serv__title-item {
+				margin-bottom: toRem(8);
+			}
 		}
 	}
 
 	// .popup-serv__icon
 	&__icon {
+		grid-row: 1 / -1;
+
+		width: toRem(48);
+
+		@media (max-width: $mobileSmall) {
+			width: toRem(24);
+		}
+
+		& svg {
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	// .popup-serv__title-item
 	&__title-item {
+		font-weight: 700;
 	}
 
 	// .popup-serv__txt
@@ -491,6 +556,17 @@ body::after {
 
 	// .popup-serv__btn-panel
 	&__btn-panel {
+		margin-left: toRem(83);
+
+		display: flex;
+		gap: toRem(8);
+		flex-wrap: wrap;
+
+		@media (max-width: $mobileSmall) {
+			margin-left: toRem(40);
+			flex-direction: column;
+			align-items: flex-start;
+		}
 	}
 
 	// .popup-serv__btn

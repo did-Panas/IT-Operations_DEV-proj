@@ -119,7 +119,10 @@
 			height: toRem(18);
 		}
 
-		&._icon-plus:before {
+		&::before {
+			content: "\e902";
+			font-family: "icons";
+
 			color: var(--white);
 
 			font-size: toRem(18);
