@@ -93,11 +93,15 @@ if (arrow) {
 
 import IMask from 'imask';
 
-const element = document.getElementById('phone');
-const maskOptions = {
-	mask: '+{42\\0} 000 000 000'
-};
-const mask = IMask(element, maskOptions);
+const elementMask = document.getElementById('phone-mask');
+
+if (elementMask) {
+	const maskOptions = {
+		mask: '+{42\\0} 000 000 000'
+	};
+	const mask = IMask(elementMask, maskOptions);
+}
+
 
 // ================================================================================
 

@@ -1,0 +1,119 @@
+.text {
+	@include adaptiveValue("padding-bottom", 60, 50, 2, 1250, 768);
+	padding-bottom: toRem(50);
+
+	background-color: var(--bg1);
+
+	@media (max-width: $mobileSmall) {
+		padding-bottom: toRem(45);
+	}
+
+	// .text__container
+	&__container {
+	}
+
+	// .text__wrapper
+	&__wrapper {
+	}
+
+	// .text__item
+	&__item {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 55, 45, 2, 1250, 768);
+			margin-bottom: toRem(45);
+
+			@media (max-width: $mobileSmall) {
+				margin-bottom: toRem(25);
+			}
+		}
+	}
+
+	// .text__title
+	&__title {
+		padding-bottom: toRem(2);
+		@include adaptiveValue("margin-bottom", 26, 19, 0, 1250, 768);
+
+		border-bottom: 1px solid var(--highlight);
+
+		// .text__title_btn
+		&_btn {
+			display: flex;
+			column-gap: toRem(50);
+			row-gap: toRem(17);
+			justify-content: space-between;
+			align-items: self-end;
+
+			@media (max-width: em(569.98)) {
+				flex-direction: column;
+				align-items: flex-start;
+
+				border-bottom: none;
+			}
+
+			& h3 {
+				@media (max-width: em(569.98)) {
+					width: 100%;
+					padding-bottom: toRem(5);
+					margin-bottom: toRem(4);
+
+					border-bottom: 1px solid var(--highlight);
+				}
+			}
+
+			& button {
+				@include adaptiveValue("margin-bottom", 10, 6, 2, 1250, 768);
+				margin-bottom: toRem(6);
+
+				@media (max-width: em(569.98)) {
+					margin-bottom: 0;
+				}
+			}
+
+			& p {
+				@media (min-width: em(569.98)) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	// .text__subtitle
+	&__subtitle {
+		margin-bottom: toRem(20);
+	}
+
+	// .text__txt
+	&__txt {
+		& p:not(:last-child) {
+			margin-bottom: toRem(25);
+		}
+	}
+
+	// .text__image
+	&__image {
+		aspect-ratio: 160 / 144;
+		width: toRem(160);
+
+		// ?????????? background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(48, 154, 224, 0.7) 100%);
+		border-radius: 5px;
+		overflow: hidden;
+
+		// text__image_floated-l
+		&_floated-l {
+		}
+	}
+
+	// .text__list
+	&__list {
+		@include adaptiveValue("padding-top", 35, 25, 2, 1250, 768);
+		padding-top: toRem(25);
+
+		@media (min-width: $tablet) {
+			margin-left: toRem(17);
+		}
+
+		@media (max-width: $mobileSmall) {
+			padding-top: toRem(22);
+		}
+	}
+}

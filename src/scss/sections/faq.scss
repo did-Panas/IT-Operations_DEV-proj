@@ -1,13 +1,5 @@
 .faq {
-	@include adaptiveValue("padding-top", 120, 75, 2, 1250, 768);
-	@include adaptiveValue("padding-bottom", 120, 80, 2, 1250, 768);
-	padding: toRem(75) toRem(0) toRem(80);
-
 	background-color: var(--bg1);
-
-	@media (max-width: $mobileSmall) {
-		padding: toRem(47) toRem(0) toRem(48);
-	}
 
 	// .faq__container
 	&__container {

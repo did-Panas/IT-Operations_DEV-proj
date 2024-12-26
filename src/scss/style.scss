@@ -156,7 +156,8 @@ body {
 @import "sections/clients";
 @import "sections/faq";
 @import "sections/guide";
-@import "sections/contact-form.scss";
+@import "sections/contact-form";
+@import "sections/text";
 
 // Підключення стилів окремих сторінок
 @import "home";
@@ -203,6 +204,13 @@ body {
 
 	// .page-home__faq
 	&__faq {
+		@include adaptiveValue("padding-top", 120, 75, 2, 1250, 768);
+		@include adaptiveValue("padding-bottom", 120, 80, 2, 1250, 768);
+		padding: toRem(75) toRem(0) toRem(80);
+
+		@media (max-width: $mobileSmall) {
+			padding: toRem(47) toRem(0) toRem(48);
+		}
 	}
 
 	// .page-home__guide
@@ -273,6 +281,16 @@ body {
 
 		@media (max-width: em(629)) {
 			padding-bottom: toRem(52);
+		}
+	}
+
+	// .page-supp__text
+	&__text {
+		@include adaptiveValue("padding-top", 120, 75, 2, 1250, 768);
+		padding-top: toRem(75);
+
+		@media (max-width: $mobileSmall) {
+			padding-top: toRem(40);
 		}
 	}
 
