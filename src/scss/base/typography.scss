@@ -37,8 +37,12 @@
 }
 
 .h3_accordion {
-	font-size: toRem(24);
+	@include adaptiveValue("font-size", 24, 20, 0, 992, 479);
 	line-height: 120%;
+
+	@media (max-width: $mobileSmall) {
+		line-height: 130%;
+	}
 }
 
 .h1,

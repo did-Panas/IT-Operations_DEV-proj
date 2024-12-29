@@ -106,6 +106,13 @@
 			padding-top: toRem(22);
 		}
 	}
+
+	// .text__accordeon-item
+	&__accordeon-item {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 30, 20, 0, 1250, 768);
+		}
+	}
 }
 
 .txt-img {
@@ -143,6 +150,135 @@
 	}
 
 	// .txt-img__txt
+	&__txt {
+	}
+}
+
+.accord {
+	@media (min-width: $mobile) {
+		display: flex;
+		@include adaptiveValue("gap", 18, 8, 0, 991, 768);
+	}
+
+	& .paragraph p:not(:last-child) {
+		margin-bottom: toRem(15);
+	}
+	// .accord__navigation
+	&__navigation {
+		display: grid;
+		grid-gap: toRem(8);
+		align-content: start;
+
+		@media (max-width: em(849.98)) {
+			flex: 0 0 50%;
+		}
+
+		@media (min-width: $mobile) {
+			flex: 0 0 toRem(367);
+		}
+	}
+
+	// .accord__title
+	&__title {
+		display: grid;
+		grid-template-columns: auto auto 1fr;
+		align-items: center;
+		grid-gap: toRem(12);
+
+		min-height: toRem(48);
+		padding: toRem(7) toRem(16);
+
+		background-color: var(--white_transp-95);
+		border-radius: toRem(5);
+		line-height: 144%;
+
+		transition: all 0.3s ease 0s;
+
+		@media (max-width: $mobile) {
+			width: 100%;
+			margin-bottom: toRem(8);
+		}
+
+		& span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			& svg path {
+				fill: var(--primary);
+			}
+		}
+
+		& p {
+			// --- text in 1 row + "..." at the end (delete and it'll be in several rows)
+			text-overflow: ellipsis;
+			overflow: hidden;
+			text-wrap: nowrap;
+			// --- text in 1 row + "..." at the end >>>
+		}
+
+		&::after {
+			justify-self: end;
+
+			margin-left: toRem(4);
+
+			content: "\e909";
+			font-family: "icons";
+			font-size: toRem(16);
+		}
+
+		&._tab-active {
+			background-color: var(--primary);
+			color: var(--white);
+
+			& svg path {
+				fill: var(--white);
+			}
+
+			&::after {
+				content: "\e902";
+				font-size: toRem(5);
+			}
+		}
+	}
+
+	// .accord__content
+	&__content {
+	}
+
+	// .accord__body
+	&__body {
+	}
+
+	// .accord__body-wrap
+	&__body-wrap {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		@include adaptiveValue("grid-gap", 20, 15, 0, 991, 768);
+
+		@include adaptiveValue("padding-top", 30, 20, 0, 991, 768);
+		@include adaptiveValue("padding-bottom", 30, 20, 0, 991, 768);
+		@include adaptiveValue("padding-right", 25, 15, 0, 991, 768);
+		@include adaptiveValue("padding-left", 25, 15, 0, 991, 768);
+
+		background-color: var(--white_transp-40);
+		border-radius: toRem(5);
+
+		@media (max-width: em(399.98)) {
+			grid-template: auto 1fr / 1fr;
+		}
+
+		& svg {
+			@include adaptiveValue("width", 48, 24, 0, 991, 768);
+			@include adaptiveValue("height", 48, 24, 0, 991, 768);
+
+			& path {
+				fill: var(--highlight);
+			}
+		}
+	}
+
+	// .accord__txt
 	&__txt {
 	}
 }
