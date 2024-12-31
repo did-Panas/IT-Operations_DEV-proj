@@ -87,6 +87,17 @@
 		& p:not(:last-child) {
 			margin-bottom: toRem(25);
 		}
+
+		& a {
+			text-decoration: underline;
+			transition: color 0.3s ease 0s;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--highlight_hover);
+				}
+			}
+		}
 	}
 
 	// .text__image
@@ -247,11 +258,29 @@
 	&__wrapper-float-l {
 		& .txt-img__image {
 			@include adaptiveValue("margin-right", 30, 16, 0, 1250, 768);
-			margin-bottom: toRem(10);
 
 			@media (min-width: $mobileSmall) {
 				float: left;
 			}
+		}
+	}
+
+	// .txt-img__wrapper-float-r
+	&__wrapper-float-r {
+		& .txt-img__image {
+			@include adaptiveValue("margin-left", 30, 16, 0, 1250, 768);
+
+			@media (min-width: $mobileSmall) {
+				float: right;
+			}
+		}
+	}
+
+	// .txt-img__wrapper-float-l, .txt-img__wrapper-float-r
+	&__wrapper-float-l,
+	&__wrapper-float-r {
+		& .txt-img__image {
+			margin-bottom: toRem(8);
 
 			@media (max-width: $mobileSmall) {
 				margin-bottom: toRem(30);
@@ -273,6 +302,17 @@
 		@media (max-width: $mobileSmall) {
 			max-width: toRem(320);
 			width: auto;
+		}
+
+		// .txt-img__image_lg
+		&_lg {
+			@include adaptiveValue("width", 276, 136, 2, 1250, 768);
+			width: toRem(136);
+
+			@media (max-width: $mobileSmall) {
+				max-width: toRem(320);
+				width: auto;
+			}
 		}
 	}
 
