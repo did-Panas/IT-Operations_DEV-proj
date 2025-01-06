@@ -37,7 +37,111 @@
 				</div>
 			</section>
 
+			<section class="page-bl-list__bl-listing blog-listing">
+				<div class="blog-listing__container">
+					<div class="blog-listing__wrapper wrap">
 
+						<div class="blog-listing__top">
+
+							<h2 class="blog-listing__title h2">Všechny články</h2>
+							<div class="blog-listing__ctrl-panel">
+
+								<button class="blog-listing__ctrl-btn _icon-search" aria-label="search">Hledat</button>
+								<button class="blog-listing__ctrl-btn _icon-filter" aria-label="filter">Filtr</button>
+								<div class="blog-listing__sort">
+									<p>Seřadit</p>
+									<select name="form[]" data-class-modif="form">
+										<option value="1" selected>Doporučené</option>
+										<option value="2">Nové</option>
+										<option value="3">Nejčtenější</option>
+									</select>
+								</div>
+
+							</div>
+							<div class="blog-listing__detailed-panel">
+
+								<form action="#" class="blog-listing__search search">
+
+									<button type="submit" class="search__btn _icon-search-btn">Hledatna blogu</button>
+									<ul class="search__checkbox-list">
+										<li class="search__item">
+											<input id="c_1" type="checkbox" name="vše" checked>
+											<label for="c_1">Vše</label>
+										</li>
+										<li class="search__item">
+											<input id="c_1" type="checkbox" name="produktivita">
+											<label for="c_1">Produktivita</label>
+										</li>
+										<li class="search__item">
+											<input id="c_1" type="checkbox" name="komunikace">
+											<label for="c_1">Komunikace</label>
+										</li>
+										<li class="search__item">
+											<input id="c_1" type="checkbox" name="bezpečnost">
+											<label for="c_1">Bezpečnost</label>
+										</li>
+										<li class="search__item">
+											<input id="c_1" type="checkbox" name="infrastruktura">
+											<label for="c_1">Infrastruktura</label>
+										</li>
+										<li class="search__item">
+											<input id="c_1" type="checkbox" name="firemní-data">
+											<label for="c_1">Firemní data</label>
+										</li>
+										<li class="search__item">
+											<input id="c_1" type="checkbox" name="náklady">
+											<label for="c_1">Náklady</label>
+										</li>
+									</ul>
+									<input class="search__input" autocomplete="off" type="text" name="form[]">
+
+								</form>
+
+								<div class="blog-listing__filter filter">
+
+									<div class="filter__close _icon-close" aria-label="close"></div>
+									<ul class="filter__list">
+										<li class="filter__item">
+											<input id="f_1" type="checkbox" name="vše" checked>
+											<label for="f_1">Vše</label>
+										</li>
+										<li class="filter__item">
+											<input id="f_2" type="checkbox" name="produktivita">
+											<label for="f_2">Produktivita a efektivita</label>
+										</li>
+										<li class="filter__item">
+											<input id="f_3" type="checkbox" name="komunikace">
+											<label for="f_3">Komunikace, spolupráce a řízení IT</label>
+										</li>
+										<li class="filter__item">
+											<input id="f_4" type="checkbox" name="bezpečnost">
+											<label for="f_4">Bezpečnost a soulad s předpisy</label>
+										</li>
+										<li class="filter__item">
+											<input id="f_5" type="checkbox" name="technické">
+											<label for="f_5">Technické vybavení firmy</label>
+										</li>
+										<li class="filter__item">
+											<input id="f_6" type="checkbox" name="správa">
+											<label for="f_6">Správa a využití firemních dat</label>
+										</li>
+										<li class="filter__item">
+											<input id="f_7" type="checkbox" name="náklady">
+											<label for="f_7">Náklady, investice a návratnost</label>
+										</li>
+									</ul>
+
+								</div>
+
+							</div>
+
+						</div>
+						<!-- !!!!!!!!SEPARATE - bl-articles -->
+						<div class="blog-listing__content bl-articles"></div>
+
+					</div>
+				</div>
+			</section>
 
 
 			<section class="page-bl-list__guide guide">

@@ -15,6 +15,12 @@
 	}
 }
 
+._icon-cross:before {
+	content: "\e90b";
+}
+._icon-search-btn:before {
+	content: "\e90c";
+}
 ._icon-minus:before {
 	content: "\e902";
 }
