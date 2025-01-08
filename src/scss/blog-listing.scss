@@ -69,6 +69,10 @@
 
 		min-width: toRem(32);
 
+		background-color: var(--white);
+		color: var(--primary);
+		transition: all 0.3s ease 0s;
+
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: var(--white_transp-60);
@@ -180,11 +184,16 @@
 	}
 }
 
-.search {
-	display: grid;
-
+.search,
+.filter {
 	display: none;
+}
 
+.search.active {
+	display: grid;
+}
+
+.search {
 	grid-template: 1fr auto / auto 1fr;
 	@include adaptiveValue("grid-column-gap", 50, 20, 0, 1250, 768);
 	@include adaptiveValue("grid-row-gap", 10, 15, 2, 1250, 768);
@@ -267,6 +276,10 @@
 
 		border-radius: toRem(5);
 	}
+}
+
+.filter.active {
+	display: block;
 }
 
 .filter {
