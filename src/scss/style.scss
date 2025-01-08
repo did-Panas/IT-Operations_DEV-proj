@@ -162,6 +162,7 @@ body {
 // Підключення стилів окремих сторінок
 @import "home";
 @import "services";
+@import "blog-listing";
 
 // ---------------------------------------
 
@@ -316,6 +317,13 @@ body {
 
 	// .page-bl-list__bl-listing
 	&__bl-listing {
+		@include adaptiveValue("padding-top", 120, 75, 2, 1250, 768);
+		@include adaptiveValue("padding-bottom", 125, 75, 2, 1250, 768);
+		padding: toRem(75) toRem(0);
+
+		@media (max-width: $mobileSmall) {
+			padding: toRem(40) toRem(0) toRem(50);
+		}
 	}
 
 	// .page-bl-list__guide
