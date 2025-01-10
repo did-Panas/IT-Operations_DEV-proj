@@ -121,5 +121,98 @@ if (guideList) {
 	});
 }
 
+
+
 // ================================================================================
 
+// ===== EBLOG-LISTING ============================================================
+
+initializePanels();
+
+function initializePanels() {
+	const btns = document.querySelectorAll('.blog-listing__ctrl-btn');
+	const btnClose = document.querySelector('.filter__close');
+	const panelFilter = document.querySelector('.filter');
+	const panelSearch = document.querySelector('.search');
+
+	if (btns) {
+		activatePanels(btns, btnClose, panelFilter, panelSearch);
+	}
+
+}
+
+function activatePanels(btns, btnClose, panelFilter, panelSearch) {
+
+
+	btns.forEach(elem => {
+		elem.addEventListener("click", function (e) {
+			const btnActive = e.currentTarget.dataset.btn;
+			const panelActive = document.querySelector(`.${btnActive}`);
+
+
+			btns.forEach(btn => {
+				btn.classList.remove('active');
+				panelFilter.classList.remove('active');
+				panelSearch.classList.remove('active');
+
+
+			});
+
+			e.currentTarget.classList.add('active');
+
+			if (panelActive.classList.contains('active')) {
+				panelActive.classList.remove('active');
+			} else {
+				panelActive.classList.add('active');
+			}
+
+
+			if (e.currentTarget.dataset.btn == `filter` && panelFilter.classList.contains('active')) {
+				btnClose.addEventListener("click", function () {
+					panelFilter.classList.remove('active');
+				});
+			}
+
+			if (panelFilter.classList.contains('active') || panelSearch.classList.contains('active')) {
+				adjustCheckboxes();
+			}
+
+		});
+	});
+
+
+
+
+
+}
+
+function adjustCheckboxes() {
+	const checkboxInputs = panelActive.querySelectorAll('.checkbox__inp');
+	const checkboxLabels = panelActive.querySelectorAll('.checkbox__lbl');
+	const checkbAll = panelActive.querySelector('#c_1');
+
+
+}
+
+
+
+// ---------------------------------
+
+// document.querySelector('#checkbox').addEventListener('change', function() {
+// 	console.log(`Чекбокс ${this.checked ? 'выбран' : 'не выбран'}.`);
+//  });
+
+// function adjustCheckboxes(panelActive) {
+// 	const checkboxInputs = panelActive.querySelectorAll('.checkbox__inp');
+// 	const checkboxLabels = panelActive.querySelectorAll('.checkbox__lbl');
+// 	const checkbAll = panelActive.querySelector('#c_1');
+
+// 	checkboxInputs.forEach(element => {
+// 		element.addEventListener("change", function (e) {
+
+// 		});
+
+
+// 	});
+
+// }
