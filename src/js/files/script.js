@@ -125,74 +125,77 @@ if (guideList) {
 
 // ================================================================================
 
-// ===== EBLOG-LISTING ============================================================
+// ===== BLOG-LISTING ============================================================
 
 initializePanels();
 
 function initializePanels() {
 	const btns = document.querySelectorAll('.blog-listing__ctrl-btn');
+	const btnFilter = document.querySelector('.blog-listing__ctrl-btn_filter');
 	const btnClose = document.querySelector('.filter__close');
 	const panelFilter = document.querySelector('.filter');
 	const panelSearch = document.querySelector('.search');
 
 	if (btns) {
-		activatePanels(btns, btnClose, panelFilter, panelSearch);
+		activatePanels(btns, btnFilter, btnClose, panelFilter, panelSearch);
 	}
 
 }
 
-function activatePanels(btns, btnClose, panelFilter, panelSearch) {
-
+function activatePanels(btns, btnFilter, btnClose, panelFilter, panelSearch) {
 
 	btns.forEach(elem => {
 		elem.addEventListener("click", function (e) {
 			const btnActive = e.currentTarget.dataset.btn;
 			const panelActive = document.querySelector(`.${btnActive}`);
 
-
-			btns.forEach(btn => {
-				btn.classList.remove('active');
-				panelFilter.classList.remove('active');
-				panelSearch.classList.remove('active');
-
-
-			});
-
-			e.currentTarget.classList.add('active');
-
-			if (panelActive.classList.contains('active')) {
+			if (e.currentTarget.classList.contains('active')) {
+				e.currentTarget.classList.remove('active');
 				panelActive.classList.remove('active');
 			} else {
+				disactivateAll(btns, panelFilter, panelSearch);
+				e.currentTarget.classList.add('active');
 				panelActive.classList.add('active');
 			}
 
-
-			if (e.currentTarget.dataset.btn == `filter` && panelFilter.classList.contains('active')) {
+			if (e.currentTarget.dataset.btn == 'filter' && panelFilter.classList.contains('active')) {
 				btnClose.addEventListener("click", function () {
 					panelFilter.classList.remove('active');
+					btnFilter.classList.remove('active');
 				});
 			}
 
 			if (panelFilter.classList.contains('active') || panelSearch.classList.contains('active')) {
-				adjustCheckboxes();
+
+
+
+
 			}
 
 		});
 	});
 
-
-
-
-
 }
 
-function adjustCheckboxes() {
-	const checkboxInputs = panelActive.querySelectorAll('.checkbox__inp');
-	const checkboxLabels = panelActive.querySelectorAll('.checkbox__lbl');
-	const checkbAll = panelActive.querySelector('#c_1');
+function disactivateAll(btns, panelFilter, panelSearch) {
+	btns.forEach(btn => {
+		btn.classList.remove('active');
+	});
 
-
+	panelFilter.classList.remove('active');
+	panelSearch.classList.remove('active');
 }
+
+
+
+
+// function adjustCheckboxes() {
+// 	const checkboxInputs = panelActive.querySelectorAll('.checkbox__inp');
+// 	const checkboxLabels = panelActive.querySelectorAll('.checkbox__lbl');
+// 	const checkbAll = panelActive.querySelector('#c_1');
+
+
+// }
 
 
 
@@ -201,6 +204,7 @@ function adjustCheckboxes() {
 // document.querySelector('#checkbox').addEventListener('change', function() {
 // 	console.log(`Чекбокс ${this.checked ? 'выбран' : 'не выбран'}.`);
 //  });
+
 
 // function adjustCheckboxes(panelActive) {
 // 	const checkboxInputs = panelActive.querySelectorAll('.checkbox__inp');
