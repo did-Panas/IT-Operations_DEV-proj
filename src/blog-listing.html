@@ -65,8 +65,10 @@
 									<button type="submit" class="search__btn _icon-search-btn h4">Hledat na blogu</button>
 									<ul class="search__checkbox-list">
 										<li class="search__item checkbox">
-											<input class="checkbox__inp" id="c_1" type="checkbox" name="vše" checked>
-											<label for="c_1" class="checkbox__lbl _icon-cross"><span>Vše</span></label>
+											<input class="checkbox__inp checkbox__inp_all" id="c_1" type="checkbox" name="vše" checked>
+											<label for="c_1" class="checkbox__lbl checkbox__lbl_all _icon-cross">
+												<span>Vše</span>
+											</label>
 										</li>
 										<li class="search__item checkbox">
 											<input class="checkbox__inp" id="c_2" type="checkbox" name="produktivita">
@@ -102,8 +104,9 @@
 									<div class="filter__close _icon-close" aria-label="close"></div>
 									<ul class="filter__list">
 										<li class="filter__item checkbox">
-											<input class="checkbox__inp" id="f_1" type="checkbox" name="vše" checked>
-											<label class="checkbox__lbl checkbox__lbl_primary _icon-cross" for="f_1"><span>Vše</span></label>
+											<input class="checkbox__inp checkbox__inp_all" id="f_1" type="checkbox" name="vše" checked>
+											<label class="checkbox__lbl checkbox__lbl_all checkbox__lbl_primary _icon-cross" for="f_1"><span>Vše</span>
+											</label>
 										</li>
 										<li class="filter__item checkbox">
 											<input class="checkbox__inp" id="f_2" type="checkbox" name="produktivita">

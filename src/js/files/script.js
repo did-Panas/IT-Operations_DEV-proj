@@ -167,9 +167,7 @@ function activatePanels(btns, btnFilter, btnClose, panelFilter, panelSearch) {
 
 			if (panelFilter.classList.contains('active') || panelSearch.classList.contains('active')) {
 
-
-
-
+				adjustCheckboxes(panelActive);
 			}
 
 		});
@@ -186,37 +184,45 @@ function disactivateAll(btns, panelFilter, panelSearch) {
 	panelSearch.classList.remove('active');
 }
 
+function adjustCheckboxes(panelActive) {
+	const checkboxInputs = panelActive.querySelectorAll('.checkbox__inp');
+	const checkboxLabels = panelActive.querySelectorAll('.checkbox__lbl');
+	const inpAll = panelActive.querySelector('.checkbox__inp_all');
 
+	checkboxLabels.forEach(element => {
+		const inp = element.previousElementSibling;
 
+		element.addEventListener("click", function (e) {
+			const txt = e.target.closest('span');
+			const labelAllClicked = e.target.closest('.checkbox__lbl_all');
 
-// function adjustCheckboxes() {
-// 	const checkboxInputs = panelActive.querySelectorAll('.checkbox__inp');
-// 	const checkboxLabels = panelActive.querySelectorAll('.checkbox__lbl');
-// 	const checkbAll = panelActive.querySelector('#c_1');
+			e.preventDefault();
 
+			if (txt) {
+				clearAllCheckboxes(checkboxInputs, inp);
+				activateThisCheckb(inp);
+			} else if (labelAllClicked) {
+				clearAllCheckboxes(checkboxInputs, inp);
+				activateThisCheckb(inp);
+			} else if (!labelAllClicked) {
+				inpAll.checked = false;
+				inpAll.removeAttribute('checked');
+				activateThisCheckb(inp);
+			}
 
-// }
+		});
+	});
 
+}
 
+function clearAllCheckboxes(checkboxInputs, inp) {
+	checkboxInputs.forEach(inp => {
+		inp.removeAttribute('checked');
+		inp.checked = false;
+	});
+}
 
-// ---------------------------------
-
-// document.querySelector('#checkbox').addEventListener('change', function() {
-// 	console.log(`Чекбокс ${this.checked ? 'выбран' : 'не выбран'}.`);
-//  });
-
-
-// function adjustCheckboxes(panelActive) {
-// 	const checkboxInputs = panelActive.querySelectorAll('.checkbox__inp');
-// 	const checkboxLabels = panelActive.querySelectorAll('.checkbox__lbl');
-// 	const checkbAll = panelActive.querySelector('#c_1');
-
-// 	checkboxInputs.forEach(element => {
-// 		element.addEventListener("change", function (e) {
-
-// 		});
-
-
-// 	});
-
-// }
+function activateThisCheckb(inp) {
+	inp.setAttribute('checked', '');
+	inp.checked = true;
+}
