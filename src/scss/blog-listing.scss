@@ -15,8 +15,15 @@
 		align-items: center;
 		grid-column-gap: toRem(50);
 
+		@include adaptiveValue("margin-bottom", 35, 20, 2, 1250, 768);
+		margin-bottom: toRem(20);
+
 		@media (min-width: em(749.98)) {
 			grid-template: 1fr auto / 1fr auto;
+		}
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(15);
 		}
 	}
 
@@ -280,6 +287,28 @@
 		padding: toRem(0) toRem(15);
 
 		border-radius: toRem(5);
+	}
+
+	// .search__res-bar
+	&__res-bar {
+	}
+}
+
+.result-bar {
+	// .result-bar__list
+	&__list {
+	}
+
+	// .result-bar__item
+	&__item {
+	}
+
+	// .result-bar__txt
+	&__txt {
+	}
+
+	// .result-bar__category
+	&__category {
 	}
 }
 
