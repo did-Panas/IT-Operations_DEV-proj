@@ -62,7 +62,7 @@
 							</div>
 							<div class="blog-listing__detailed-panel">
 
-								<div class="blog-listing__search search">
+								<form action="#" class="blog-listing__search search">
 
 									<button type="submit" class="search__btn _icon-search-btn h4">Hledat na blogu</button>
 									<ul class="search__checkbox-list">
@@ -97,91 +97,134 @@
 											<label for="c_7" class="checkbox__lbl _icon-cross"><span>Náklady</span></label>
 										</li>
 									</ul>
-									<input class="search__input" autocomplete="off" type="text" name="form[]">
+									<div class="search__input-bar">
+										<input class="search__input paragraph" autocomplete="off" type="text" name="form[]">
+										<!-- !!! SEARCH BAR HINTS -->
+										<!-- !!! delete "hidden" attribute for making active -->
+										<div hidden class="search__res-bar result-bar">
+											<div class="result-bar__body">
+												<ul data-simplebar data-simplebar-auto-hide="false">
 
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Zaměstnanci jsou otrávení z pomalých nebo nefunkčních počítačů.
+														</a>
+														<div class="result-bar__category category_highlight">
+															<p>Produktivita</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Zaměstnanci si často stěžují na technické problémy, které jim brání v práci.
+														</a>
+														<div class="result-bar__category category_highlight">
+															<p>Produktivita</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Zaměstnanci nemohou pracovat mimo kancelář, protože nemají přístup k potřebným protože nemají přístup k potřebným.
+														</a>
+														<div class="result-bar__category category_cat2">
+															<p>Komunikace</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Zaměstnanci nemohou snadno sdílet soubory nebo informace kvůli špatným nástrojům protože nemají přístup k potřebným.
+														</a>
+														<div class="result-bar__category category_cat2">
+															<p>Komunikace</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Neustálé problémy s IT způsobují, že zaměstnanci obcházejí bezpečnostní zásady protože nemají přístup k potřebným.
+														</a>
+														<div class="result-bar__category category_cat3">
+															<p>Bezpečnost</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Časté výpadky serverů nebo síťových služeb způsobují zpoždění a frustraci.
+														</a>
+														<div class="result-bar__category category_cat4 category_cat5">
+															<p>Infrastruktura</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Zaměstnanci mají problémy s vyhledáváním a správou dokumentů nebo dat, což protože nemají přístup k potřebným.
+														</a>
+														<div class="result-bar__category category_cat5">
+															<p>Firemní data</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Nesprávně nastavené systémy vedou k chybám v datech, což vede k nespokojenosti protože nemají přístup k potřebným.
+														</a>
+														<div class="result-bar__category category_cat5">
+															<p>Firemní data</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Neefektivní software vede k nadbytečné práci, což negativně ovlivňuje morálku protože nemají přístup k potřebným.
+														</a>
+														<div class="result-bar__category category_cat6">
+															<p>Náklady</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Neustálé problémy s IT způsobují, že zaměstnanci obcházejí bezpečnostní zásady protože nemají přístup k potřebným.
+														</a>
+														<div class="result-bar__category category_cat3">
+															<p>Bezpečnost</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Časté výpadky serverů nebo síťových služeb způsobují zpoždění a frustraci.
+														</a>
+														<div class="result-bar__category category_cat4 category_cat5">
+															<p>Infrastruktura</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Zaměstnanci mají problémy s vyhledáváním a správou dokumentů nebo dat, což protože nemají přístup k potřebným.
+														</a>
+														<div class="result-bar__category category_cat5">
+															<p>Firemní data</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Nesprávně nastavené systémy vedou k chybám v datech, což vede k nespokojenosti protože nemají přístup k potřebným.
+														</a>
+														<div class="result-bar__category category_cat5">
+															<p>Firemní data</p>
+														</div>
+													</li>
+													<li class="result-bar__item">
+														<a href="#" class="result-bar__link paragraph">
+															Neefektivní software vede k nadbytečné práci, což negativně ovlivňuje morálku protože nemají přístup k potřebným.
+														</a>
+														<div class="result-bar__category category_cat6">
+															<p>Náklady</p>
+														</div>
+													</li>
 
-									<div class="search__res-bar result-bar">
-										<ul class="result-bar__list">
+												</ul>
+											</div>
 
-											<li class="result-bar__item">
-												<p class="result-bar__txt paragraph">
-													Zaměstnanci jsou otrávení z pomalých nebo nefunkčních počítačů.
-												</p>
-												<div class="result-bar__category">
-													Produktivita
-												</div>
-											</li>
-											<li class="result-bar__item">
-												<p class="result-bar__txt paragraph">
-													Zaměstnanci si často stěžují na technické problémy, které jim brání v práci.
-												</p>
-												<div class="result-bar__category">
-													Produktivita
-												</div>
-											</li>
-											<li class="result-bar__item">
-												<p class="result-bar__txt paragraph">
-													Zaměstnanci nemohou pracovat mimo kancelář, protože nemají přístup k potřebným...
-												</p>
-												<div class="result-bar__category">
-													Komunikace
-												</div>
-											</li>
-											<li class="result-bar__item">
-												<p class="result-bar__txt paragraph">
-													Zaměstnanci nemohou snadno sdílet soubory nebo informace kvůli špatným nástrojům...
-												</p>
-												<div class="result-bar__category">
-													Komunikace
-												</div>
-											</li>
-											<li class="result-bar__item">
-												<p class="result-bar__txt paragraph">
-													Neustálé problémy s IT způsobují, že zaměstnanci obcházejí bezpečnostní zásady...
-												</p>
-												<div class="result-bar__category">
-													Bezpečnost
-												</div>
-											</li>
-											<li class="result-bar__item">
-												<p class="result-bar__txt paragraph">
-													Časté výpadky serverů nebo síťových služeb způsobují zpoždění a frustraci.
-												</p>
-												<div class="result-bar__category">
-													Infrastruktura
-												</div>
-											</li>
-											<li class="result-bar__item">
-												<p class="result-bar__txt paragraph">
-													Zaměstnanci mají problémy s vyhledáváním a správou dokumentů nebo dat, což...
-												</p>
-												<div class="result-bar__category">
-													Firemní data
-												</div>
-											</li>
-											<li class="result-bar__item">
-												<p class="result-bar__txt paragraph">
-													Nesprávně nastavené systémy vedou k chybám v datech, což vede k nespokojenosti...
-												</p>
-												<div class="result-bar__category">
-													Firemní data
-												</div>
-											</li>
-											<li class="result-bar__item">
-												<p class="result-bar__txt paragraph">
-													Neefektivní software vede k nadbytečné práci, což negativně ovlivňuje morálku...
-												</p>
-												<div class="result-bar__category">
-													Náklady
-												</div>
-											</li>
-
-										</ul>
+										</div>
 									</div>
 
-
-
-								</div>
+								</form>
 
 								<div class="blog-listing__filter filter">
 
@@ -189,32 +232,32 @@
 									<ul class="filter__list">
 										<li class="filter__item checkbox">
 											<input class="checkbox__inp checkbox__inp_all" id="f_1" type="checkbox" name="vše" checked>
-											<label class="checkbox__lbl checkbox__lbl_all checkbox__lbl_primary _icon-cross" for="f_1"><span>Vše</span>
+											<label class="checkbox__lbl checkbox__lbl_all category_primary _icon-cross" for="f_1"><span>Vše</span>
 											</label>
 										</li>
 										<li class="filter__item checkbox">
 											<input class="checkbox__inp" id="f_2" type="checkbox" name="produktivita">
-											<label class="checkbox__lbl  checkbox__lbl_highlight _icon-cross" for="f_2"><span>Produktivita a efektivita</span></label>
+											<label class="checkbox__lbl  category_highlight _icon-cross" for="f_2"><span>Produktivita a efektivita</span></label>
 										</li>
 										<li class="filter__item checkbox">
 											<input class="checkbox__inp" id="f_3" type="checkbox" name="komunikace">
-											<label class="checkbox__lbl checkbox__lbl_cat2 _icon-cross" for="f_3"><span>Komunikace, spolupráce a řízení IT</span></label>
+											<label class="checkbox__lbl category_cat2 _icon-cross" for="f_3"><span>Komunikace, spolupráce a řízení IT</span></label>
 										</li>
 										<li class="filter__item checkbox">
 											<input class="checkbox__inp" id="f_4" type="checkbox" name="bezpečnost">
-											<label class="checkbox__lbl checkbox__lbl_cat3 _icon-cross" for="f_4"><span>Bezpečnost a soulad s předpisy</span></label>
+											<label class="checkbox__lbl category_cat3 _icon-cross" for="f_4"><span>Bezpečnost a soulad s předpisy</span></label>
 										</li>
 										<li class="filter__item checkbox">
 											<input class="checkbox__inp" id="f_5" type="checkbox" name="technické">
-											<label class="checkbox__lbl checkbox__lbl_cat4 _icon-cross" for="f_5"><span>Technické vybavení firmy</span></label>
+											<label class="checkbox__lbl category_cat4 _icon-cross" for="f_5"><span>Technické vybavení firmy</span></label>
 										</li>
 										<li class="filter__item checkbox">
 											<input class="checkbox__inp" id="f_6" type="checkbox" name="správa">
-											<label class="checkbox__lbl checkbox__lbl_cat5 _icon-cross" for="f_6"><span>Správa a využití firemních dat</span></label>
+											<label class="checkbox__lbl category_cat5 _icon-cross" for="f_6"><span>Správa a využití firemních dat</span></label>
 										</li>
 										<li class="filter__item checkbox">
 											<input class="checkbox__inp" id="f_7" type="checkbox" name="náklady">
-											<label class="checkbox__lbl checkbox__lbl_cat6 _icon-cross" for="f_7"><span>Náklady, investice a návratnost</span></label>
+											<label class="checkbox__lbl category_cat6 _icon-cross" for="f_7"><span>Náklady, investice a návratnost</span></label>
 										</li>
 									</ul>
 

@@ -281,36 +281,164 @@
 	&__item {
 	}
 
+	// .search__input-bar
+	&__input-bar {
+		position: relative;
+	}
+
 	// .search__input
 	&__input {
 		height: toRem(32);
+		width: 100%;
 		padding: toRem(0) toRem(15);
 
+		color: var(--black);
 		border-radius: toRem(5);
 	}
 
 	// .search__res-bar
 	&__res-bar {
+		position: absolute;
+		left: 0;
+		top: calc(100% - 3px);
+
+		width: 100%;
+
+		@media (max-width: em(374.98)) {
+			width: calc(100% + toRem(25));
+		}
 	}
 }
 
 .result-bar {
-	// .result-bar__list
-	&__list {
+	padding: toRem(5) toRem(16) 0 toRem(16);
+
+	background-color: var(--white);
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+	border-bottom-right-radius: toRem(5);
+	border-bottom-left-radius: toRem(5);
+
+	@media (max-width: em(374.98)) {
+		padding: toRem(5) toRem(5) 0 toRem(16);
+	}
+
+	// .result-bar__body
+	&__body {
+		padding: toRem(8) toRem(0) toRem(8) 0;
+
+		color: var(--black);
+		border-top: 1px dashed var(--primary);
+
+		& ul {
+			max-height: toRem(369);
+			overflow-y: auto;
+			padding-right: toRem(23);
+
+			@media (max-width: $mobileSmall) {
+				padding-right: toRem(17);
+			}
+		}
 	}
 
 	// .result-bar__item
 	&__item {
+		display: flex;
+		justify-content: space-between;
+		column-gap: toRem(30);
+		row-gap: toRem(3);
+
+		min-height: toRem(41);
+		padding: toRem(6) toRem(10);
+
+		&:nth-child(even) {
+			background-color: var(--bg2);
+		}
+
+		@media (min-width: $mobile) {
+			align-items: center;
+		}
+
+		@media (max-width: $mobile) {
+			flex-direction: column;
+		}
 	}
 
-	// .result-bar__txt
-	&__txt {
+	// .result-bar__link
+	&__link {
+		max-width: toRem(670);
+		text-overflow: ellipsis;
+		overflow: hidden;
+		text-wrap: nowrap;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		@media (max-width: $mobileSmall) {
+			font-size: toRem(14);
+		}
 	}
 
 	// .result-bar__category
 	&__category {
+		display: flex;
+		align-items: center;
+
+		max-width: toRem(120);
+		height: toRem(15);
+		padding: toRem(0) toRem(15);
+
+		border-radius: toRem(5);
+		color: var(--white);
+		font-size: toRem(10);
+		font-weight: 700;
+
+		@media (max-width: $mobile) {
+			align-self: flex-end;
+		}
+
+		& p {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			text-wrap: nowrap;
+		}
 	}
 }
+
+//  Simplebar Customizing ---------------------
+.simplebar-content-wrapper {
+	scrollbar-width: auto;
+	-ms-overflow-style: auto;
+}
+
+.simplebar-content-wrapper::-webkit-scrollbar,
+.simplebar-hide-scrollbar::-webkit-scrollbar {
+	display: initial;
+	width: initial;
+	height: initial;
+}
+
+.simplebar-track {
+	width: toRem(15) !important;
+
+	@media (max-width: $mobileSmall) {
+		width: toRem(8) !important;
+	}
+}
+
+.simplebar-track.simplebar-vertical {
+	border: 1px solid var(--primary);
+	border-radius: toRem(5);
+}
+
+.simplebar-scrollbar.simplebar-visible {
+	background-color: var(--primary);
+	border-radius: toRem(3);
+}
+
+//  >>>>> ---------- Simplebar Customizing ----
 
 .filter.active {
 	display: block;
@@ -416,41 +544,6 @@
 			@media (max-width: $mobileSmall) {
 				height: auto;
 			}
-
-			// .checkbox__lbl_primary
-			&_primary {
-				background-color: var(--primary);
-			}
-
-			// .checkbox__lbl_highlight
-			&_highlight {
-				background-color: var(--highlight);
-			}
-
-			// .checkbox__lbl_cat2
-			&_cat2 {
-				background-color: var(--cat2);
-			}
-
-			// .checkbox__lbl_cat3
-			&_cat3 {
-				background-color: var(--cat3);
-			}
-
-			// .checkbox__lbl_cat4
-			&_cat4 {
-				background-color: var(--cat4);
-			}
-
-			// .checkbox__lbl_cat5
-			&_cat5 {
-				background-color: var(--cat5);
-			}
-
-			// .checkbox__lbl_cat6
-			&_cat6 {
-				background-color: var(--cat6);
-			}
 		}
 
 		& span {
@@ -499,4 +592,41 @@
 
 .checkbox__inp:checked + .checkbox__lbl:before {
 	color: var(--primary);
+}
+
+.category {
+	// .category_primary
+	&_primary {
+		background-color: var(--primary);
+	}
+
+	// .category_highlight
+	&_highlight {
+		background-color: var(--highlight);
+	}
+
+	// .category_cat2
+	&_cat2 {
+		background-color: var(--cat2);
+	}
+
+	// .category_cat3
+	&_cat3 {
+		background-color: var(--cat3);
+	}
+
+	// .category_cat4
+	&_cat4 {
+		background-color: var(--cat4);
+	}
+
+	// .category_cat5
+	&_cat5 {
+		background-color: var(--cat5);
+	}
+
+	// .category_cat6
+	&_cat6 {
+		background-color: var(--cat6);
+	}
 }
