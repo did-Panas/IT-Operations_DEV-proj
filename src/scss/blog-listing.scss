@@ -188,6 +188,11 @@
 	// .blog-listing__filter
 	&__filter {
 	}
+
+	// .blog-listing__nav
+	&__nav {
+		margin-top: toRem(21);
+	}
 }
 
 // -----------------------------------------------------
@@ -906,5 +911,45 @@
 	// .length-bar__txt
 	&__txt {
 		line-height: 100%;
+	}
+}
+
+.pagination {
+	// .pagination__list
+	&__list {
+		display: flex;
+		gap: toRem(9);
+		justify-content: center;
+	}
+
+	// .pagination__item
+	&__item {
+		&:first-child {
+			margin-right: toRem(4);
+		}
+
+		&:last-child {
+			margin-left: toRem(4);
+		}
+	}
+
+	// .pagination__link
+	&__link {
+		color: var(--black);
+
+		transition: color 0.3s ease 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--highlight_hover);
+			}
+		}
+
+		&.disabled {
+			color: var(--faq_color);
+
+			pointer-events: none;
+			cursor: default;
+		}
 	}
 }
