@@ -163,6 +163,7 @@ body {
 @import "home";
 @import "services";
 @import "blog-listing";
+@import "blog-article";
 
 // ---------------------------------------
 
@@ -338,6 +339,20 @@ body {
 .page-bl-art {
 	// .page-bl-art__guide
 	&__guide {
+	}
+
+	// .page-bl-art__faq
+	&__faq {
+		@include adaptiveValue("padding-bottom", 120, 80, 2, 1250, 768);
+		padding-bottom: toRem(80);
+
+		@media (max-width: $mobileSmall) {
+			padding-bottom: toRem(48);
+		}
+	}
+
+	// .page-bl-art__sugg-articles
+	&__sugg-articles {
 	}
 
 	// .page-bl-art__contact-form

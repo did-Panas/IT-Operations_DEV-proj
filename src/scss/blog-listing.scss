@@ -648,14 +648,6 @@
 
 	// .articles__item
 	&__item {
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 24, 16, 0, 1250, 768);
-			margin-bottom: toRem(16);
-
-			@media (max-width: $mobileSmall) {
-				margin-bottom: toRem(12);
-			}
-		}
 	}
 }
 
@@ -672,6 +664,15 @@
 
 	background-color: var(--white);
 	border-radius: toRem(5);
+
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 24, 16, 0, 1250, 768);
+		margin-bottom: toRem(16);
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(12);
+		}
+	}
 
 	@media (max-width: $mobile) {
 		grid-template: auto auto 1fr auto / 1fr auto auto;
