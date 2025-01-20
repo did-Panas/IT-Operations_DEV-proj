@@ -1,4 +1,10 @@
 .articles-sugg {
+	background-color: var(--bg2);
+
+	@media (max-width: $mobileSmall) {
+		display: none;
+	}
+
 	// .articles-sugg__container
 	&__container {
 	}
@@ -9,6 +15,11 @@
 
 	// .articles-sugg__top
 	&__top {
+		display: flex;
+		justify-content: space-between;
+		gap: toRem(50);
+
+		margin-bottom: toRem(45);
 	}
 
 	// .articles-sugg__title

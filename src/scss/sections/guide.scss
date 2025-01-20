@@ -54,6 +54,12 @@
 	background-color: var(--bg1);
 }
 
+.page-bl-art__guide.guide {
+	@media (min-width: $mobileSmall) {
+		background-color: var(--bg1);
+	}
+}
+
 .guide-item {
 	position: relative;
 

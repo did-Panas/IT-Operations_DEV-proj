@@ -353,6 +353,8 @@ body {
 
 	// .page-bl-art__sugg-articles
 	&__sugg-articles {
+		@include adaptiveValue("padding-top", 120, 75, 0, 1250, 768);
+		@include adaptiveValue("padding-bottom", 130, 80, 0, 1250, 768);
 	}
 
 	// .page-bl-art__contact-form
