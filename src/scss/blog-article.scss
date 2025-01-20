@@ -1,3 +1,39 @@
+//===== HERO SECTION ========================================================
+
+.hero-blog {
+	// .hero-blog__container
+	&__container {
+	}
+
+	// .hero-blog__wrapper
+	&__wrapper {
+	}
+
+	// .hero-blog__breadcrumbs
+	&__breadcrumbs {
+	}
+
+	// .hero-blog__title
+	&__title {
+	}
+
+	// .hero-blog__categories
+	&__categories {
+	}
+
+	// .hero-blog__category
+	&__category {
+	}
+
+	// .hero-blog__date
+	&__date {
+	}
+}
+
+//=========================== >>>>> HERO SECTION =============================
+
+//===== SUGGESTED-ARTICLES SECTION ===========================================
+
 .articles-sugg {
 	background-color: var(--bg2);
 
@@ -38,3 +74,5 @@
 	&__list {
 	}
 }
+
+//=========================== >>>>> SUGGESTED-ARTICLES SECTION ================
