@@ -26,6 +26,13 @@
 				margin-bottom: toRem(30);
 			}
 		}
+
+		// .text__item_intro
+		&_intro {
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
 	}
 
 	// .text__title

@@ -339,6 +339,17 @@ body {
 .page-bl-art {
 	// .page-bl-art__hero
 	&__hero {
+		margin-bottom: toRem(-1);
+	}
+
+	// .page-bl-art__text
+	&__text {
+		@include adaptiveValue("padding-top", 40, 35, 2, 1250, 768);
+		padding-top: toRem(35);
+
+		@media (max-width: $mobileSmall) {
+			padding-top: toRem(27);
+		}
 	}
 
 	// .page-bl-art__guide
