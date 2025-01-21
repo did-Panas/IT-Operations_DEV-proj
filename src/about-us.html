@@ -9,6 +9,42 @@
 		@@include('html/_header.htm',{})
 		<main class="page-about-us">
 
+			<section class="page-about-us__hero hero-about">
+				<div class="hero-about__container">
+					<div class="hero-about__wrapper wrap">
+
+						<nav class="hero-about__breadcrumbs breadcrumbs" aria-label="breadcrumb">
+							<ul class="breadcrumbs__list">
+								<li class="breadcrumbs__item breadcrumbs__item_home">
+									<a href="home.html">IT Operations</a>
+									<span aria-hidden="true">></span>
+								</li>
+								<li class="breadcrumbs__item breadcrumbs__item_curr" aria-current=”page”>
+									O nás
+								</li>
+							</ul>
+						</nav>
+						<h1 class="hero-about__title h1">
+							Firemní IT s lidskou <span class="underline">tváří</span>
+						</h1>
+						<!-- block for probable future "intro-text" -->
+						<!-- please, delete "hidden" attribute for activating -->
+						<div hidden class="hero-about__intro-txt paragraph">
+							<p>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quis molestias voluptatibus numquam molestiae excepturi eum, nam perspiciatis at similique? Debitis sequi
+								quae
+								iste illo vel dolorem qui ab reprehenderit ipsam commodi maiores, laborum cupiditate, earum ex officia recusandae id?
+							</p>
+							<p>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quis molestias voluptatibus numquam molestiae excepturi eum, nam perspiciatis at similique? Debitis sequi
+								quae
+								iste illo vel dolorem qui ab reprehenderit ipsam commodi maiores, laborum cupiditate, earum ex officia recusandae id?
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</section>
 			<section class="page-about-us__guide guide">
 				<div class="guide__container">
 					<div class="guide__wrapper wrap">
@@ -64,7 +100,6 @@
 			<section class="page-about-us__contact-form">
 				@@include('html/_contact-form.htm',{})
 			</section>
-
 
 		</main>
 		@@include('html/_footer.htm',{})

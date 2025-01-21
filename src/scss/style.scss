@@ -164,6 +164,7 @@ body {
 @import "services";
 @import "blog-listing";
 @import "blog-article";
+@import "about-us";
 
 // ---------------------------------------
 
@@ -378,6 +379,18 @@ body {
 }
 
 .page-about-us {
+	// .page-about-us__hero
+	&__hero {
+		@include adaptiveValue("padding-top", 45, 20, 0, 1250, 768);
+		@include adaptiveValue("padding-bottom", 70, 40, 2, 1250, 768);
+		padding-bottom: toRem(40);
+		margin-bottom: toRem(-1);
+
+		@media (max-width: $mobileSmall) {
+			padding-bottom: toRem(35);
+		}
+	}
+
 	// .page-about-us__guide
 	&__guide {
 	}

@@ -1,0 +1,37 @@
+.hero-about {
+	background-color: var(--primary);
+	color: var(--white);
+
+	// .hero-about__container
+	&__container {
+	}
+
+	// .hero-about__wrapper
+	&__wrapper {
+	}
+
+	// .hero-about__breadcrumbs
+	&__breadcrumbs {
+		@include adaptiveValue("margin-bottom", 70, 35, 2, 1250, 768);
+		margin-bottom: toRem(35);
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(30);
+		}
+	}
+
+	// .hero-about__title
+	&__title {
+	}
+
+	// .hero-about__intro-txt
+	&__intro-txt {
+		@include adaptiveValue("margin-top", 50, 35, 0, 1250, 768);
+
+		& p {
+			&:not(:last-child) {
+				margin-bottom: toRem(15);
+			}
+		}
+	}
+}

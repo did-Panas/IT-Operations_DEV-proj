@@ -60,6 +60,16 @@
 	}
 }
 
+.page-about-us__guide {
+	&.guide {
+		background-color: var(--primary);
+	}
+
+	& .guide__title {
+		color: var(--white);
+	}
+}
+
 .guide-item {
 	position: relative;
 
