@@ -1,3 +1,5 @@
+//===== HERO SECTION ========================================================
+
 .hero-about {
 	background-color: var(--primary);
 	color: var(--white);
@@ -35,3 +37,89 @@
 		}
 	}
 }
+
+//================================== >>>>> HERO SECTION =====================
+
+//===== TEAM SECTION ========================================================
+
+.team {
+	// .team__container
+	&__container {
+	}
+
+	// .team__wrapper
+	&__wrapper {
+	}
+
+	// .team__ctrl-panel
+	&__ctrl-panel {
+	}
+
+	// .team__btn
+	&__btn {
+		// .team__btn_people
+		&_people {
+		}
+
+		// .team__btn_values
+		&_values {
+		}
+	}
+
+	// .team__body
+	&__body {
+	}
+
+	// .team__card
+	&__card {
+	}
+}
+
+.card-people {
+	// .card-people__content
+	&__content {
+	}
+
+	// .card-people__photo
+	&__photo {
+	}
+
+	// .card-people__hover
+	&__hover {
+	}
+
+	// .card-people__hover-txt
+	&__hover-txt {
+	}
+
+	// .card-people__caption
+	&__caption {
+	}
+}
+
+.card-values {
+	// .card-values__front
+	&__front {
+	}
+
+	// .card-values__icon
+	&__icon {
+		// .card-values__icon_front
+		&_front {
+		}
+
+		// .card-values__icon_back
+		&_back {
+		}
+	}
+
+	// .card-values__back
+	&__back {
+	}
+
+	// .card-values__txt
+	&__txt {
+	}
+}
+
+//================================== >>>>> TEAM SECTION =====================
