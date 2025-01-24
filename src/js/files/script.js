@@ -225,3 +225,53 @@ function activateThisCheckb(inp) {
 	inp.setAttribute('checked', '');
 	inp.checked = true;
 }
+
+// ================================================================================
+
+// ===== TEAM-CARD FONT-SIZE RESIZING =============================================
+
+// Description: An example of adjusting the font size so that the text fills the entire block.
+
+const computedFontSize = ({
+	el,
+	maxFontSize = 60,
+	stepFontSize = 0.5,
+	onlyDecrease = false
+}) => {
+	el.style.visibility = "hidden"; // hiding unpleasant visual effects
+	el.innerHTML = `<div class="container"><div class="wrapper">${el.innerHTML}</div></div>`;
+	const container = el.querySelector(".container");
+	const wrapper = el.querySelector(".wrapper");
+	if (!onlyDecrease) el.style.fontSize = `${maxFontSize}px`;
+
+	for (
+		let i = maxFontSize;
+		i > 0 && container.offsetHeight < wrapper.offsetHeight;
+		i -= stepFontSize
+	) {
+		el.style.fontSize = `${i}px`;
+	}
+	el.innerHTML = wrapper.innerHTML;
+	el.style.removeProperty("visibility");
+};
+
+const teamCards = document.querySelectorAll('.hover-txt');
+const teamBlock = document.querySelector('.team');
+
+if (teamBlock) {
+	document.addEventListener("DOMContentLoaded", function (e) {
+		teamCards.forEach(example => {
+			computedFontSize({ el: example, onlyDecreade: true });
+
+		});
+	});
+
+	window.addEventListener("resize", function (e) {
+		teamCards.forEach(example => {
+			computedFontSize({ el: example, onlyDecreade: true });
+
+		});
+	});
+}
+
+// ================================================================================

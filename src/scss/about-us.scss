@@ -43,6 +43,8 @@
 //===== TEAM SECTION ========================================================
 
 .team {
+	background: var(--primary);
+
 	// .team__container
 	&__container {
 	}
@@ -53,10 +55,40 @@
 
 	// .team__ctrl-panel
 	&__ctrl-panel {
+		display: flex;
+		gap: 9px;
+		justify-content: flex-end;
+
+		margin-bottom: toRem(15);
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(12);
+		}
 	}
 
 	// .team__btn
 	&__btn {
+		display: flex;
+		gap: toRem(8);
+		align-items: center;
+
+		padding: toRem(3) toRem(12);
+
+		background-color: var(--white);
+		border-radius: toRem(5);
+		transition: background-color 0.3s ease 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--white_transp-80);
+			}
+		}
+
+		&.active {
+			background-color: var(--highlight);
+			color: var(--white);
+		}
+
 		// .team__btn_people
 		&_people {
 		}
@@ -68,58 +100,225 @@
 
 	// .team__body
 	&__body {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		@include adaptiveValue("gap", 15, 12, 0, 1250, 768);
+
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: $mobileSmall) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	// .team__card
 	&__card {
+		aspect-ratio: 368 / 422;
+
+		background-color: var(--white);
+		border-radius: toRem(5);
 	}
 }
 
 .card-people {
+	display: grid;
+	grid-template-rows: 1fr 16.587678%; /* 70/422 */
+	grid-row-gap: toRem(10);
+
+	padding-bottom: toRem(10);
+
 	// .card-people__content
 	&__content {
+		position: relative;
+
+		border: 5px solid var(--white);
+		border-radius: toRem(5);
 	}
 
 	// .card-people__photo
 	&__photo {
+		width: 100%;
+		height: 100%;
+
+		.card-people.active & {
+			-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+			filter: grayscale(100%);
+		}
 	}
 
 	// .card-people__hover
 	&__hover {
+		position: absolute;
+		inset: 0;
+		padding: 8.746356% 13.96648% 14.577259% 13.96648%; /* 50/358 */
+
+		color: var(--white);
+		opacity: 0;
+		transition:
+			opacity 0.3s ease 0s,
+			background-color 0.3s ease 0s;
+
+		& p {
+			display: flex;
+			flex-direction: column;
+			gap: toRem(15);
+		}
+
+		.card-people.active & {
+			background-color: rgba(39, 43, 73, 0.7);
+			opacity: 1;
+		}
 	}
 
 	// .card-people__hover-txt
 	&__hover-txt {
+		height: 100%;
+
+		line-height: 144%;
 	}
 
 	// .card-people__caption
 	&__caption {
+		align-self: center;
+
+		padding: toRem(0) toRem(15);
+
+		color: var(--black);
+		text-align: center;
+
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+
+		& span {
+			font-weight: 700;
+		}
 	}
 }
 
 .card-values {
-	// .card-values__front
-	&__front {
+	position: relative;
+
+	// .card-values_icon-txt-bl
+	&_icon-txt-bl {
 	}
 
-	// .card-values__icon
-	&__icon {
-		// .card-values__icon_front
-		&_front {
+	// .card-values_txt-bl
+	&_txt-bl {
+	}
+
+	// .card-values_logo-bl
+	&_logo-bl {
+	}
+
+	// .card-values__front
+	&__front {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		height: 100%;
+	}
+
+	// .card-values__icon-front
+	&__icon-front {
+		flex: 0 0 48.913043%; /* 180/368 */
+
+		.card-values_logo-bl & {
+			flex: 0 0 76.086957%; /* 280/368 */
 		}
 
-		// .card-values__icon_back
-		&_back {
+		& svg {
+			width: 100%;
+			height: auto;
 		}
 	}
 
 	// .card-values__back
 	&__back {
+		position: absolute;
+		inset: 0;
+
+		height: 100%;
+		padding: 14.563107% 13.96648%; /* 50/358 */
+
+		background-color: var(--primary);
+		color: var(--white);
+		border: 5px solid var(--white);
+		border-radius: toRem(5);
+		opacity: 0;
+
+		.card-values.active & {
+			opacity: 1;
+		}
+
+		.card-values_icon-txt-bl & {
+			display: flex;
+			flex-direction: column;
+			gap: 8.503401%;
+			justify-content: space-between;
+		}
+
+		.card-values_txt-bl & {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	// .card-values__icon-back
+	&__icon-back {
+		& svg path {
+			fill: var(--white);
+		}
+
+		.card-values_icon-txt-bl & {
+			& svg {
+				width: 31.128405%; /* 80/257 */
+				height: auto;
+			}
+		}
+
+		.card-values_logo-bl & {
+			position: absolute;
+			inset: 0;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			& svg {
+				width: 90.217391%; /* 332/368 */
+				height: auto;
+
+				& path {
+					fill: rgba(255, 255, 255, 0.15);
+				}
+			}
+		}
 	}
 
 	// .card-values__txt
 	&__txt {
+		height: 100%;
+
+		line-height: 144%;
+
+		.card-values_logo-bl & {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
+}
+
+// font-size adjusting container created by JS
+.container {
+	overflow: hidden;
+	height: 100%;
+	max-height: 100%;
 }
 
 //================================== >>>>> TEAM SECTION =====================

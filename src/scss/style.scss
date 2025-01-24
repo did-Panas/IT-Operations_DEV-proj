@@ -393,6 +393,12 @@ body {
 
 	// .page-about-us__team
 	&__team {
+		@include adaptiveValue("padding-bottom", 115, 70, 2, 1250, 768);
+		padding-bottom: toRem(70);
+
+		@media (max-width: $mobileSmall) {
+			padding-bottom: toRem(40);
+		}
 	}
 
 	// .page-about-us__guide
