@@ -601,43 +601,6 @@
 	color: var(--primary);
 }
 
-.category {
-	// .category_primary
-	&_primary {
-		background-color: var(--primary);
-	}
-
-	// .category_highlight
-	&_cat1 {
-		background-color: var(--cat1);
-	}
-
-	// .category_cat2
-	&_cat2 {
-		background-color: var(--cat2);
-	}
-
-	// .category_cat3
-	&_cat3 {
-		background-color: var(--cat3);
-	}
-
-	// .category_cat4
-	&_cat4 {
-		background-color: var(--cat4);
-	}
-
-	// .category_cat5
-	&_cat5 {
-		background-color: var(--cat5);
-	}
-
-	// .category_cat6
-	&_cat6 {
-		background-color: var(--cat6);
-	}
-}
-
 // -----------------------------------------------------
 // ----- BLOG-LISTING__CONTENT -------------------------
 
