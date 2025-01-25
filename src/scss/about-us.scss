@@ -119,6 +119,8 @@
 
 		background-color: var(--white);
 		border-radius: toRem(5);
+
+		cursor: pointer;
 	}
 }
 
@@ -250,6 +252,7 @@
 		border: 5px solid var(--white);
 		border-radius: toRem(5);
 		opacity: 0;
+		transition: opacity 0.3s ease 0s;
 
 		.card-values.active & {
 			opacity: 1;

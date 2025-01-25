@@ -228,9 +228,9 @@ function activateThisCheckb(inp) {
 
 // ================================================================================
 
-// ===== TEAM-CARD FONT-SIZE RESIZING =============================================
+// ===== ABOUT-US SECTION - TEAM - BLOCK ==========================================
 
-// Description: An example of adjusting the font size so that the text fills the entire block.
+// FONT-SIZE RESIZING -----
 
 const computedFontSize = ({
 	el,
@@ -272,6 +272,55 @@ if (teamBlock) {
 
 		});
 	});
+
+	initializeTeamBtns(); // team cards adjusting
 }
+
+
+//  TEAM CARDS ADJUSTING -----
+
+function initializeTeamBtns() {
+	const teamBtns = document.querySelectorAll('.team__ctrl-panel button');
+
+
+
+
+	teamBtns.forEach(teamBtn => {
+		teamBtn.classList.remove('active');
+
+		teamBtn.addEventListener("click", function (e) {
+			const btnActive = e.currentTarget.dataset.btn;
+			const cardsActive = document.querySelectorAll(`.${btnActive}`);
+
+			teamBtn.classList.toggle('active');
+
+			if (e.currentTarget.classList.contains('active')) {
+
+				activateCards(cardsActive);
+			} else {
+				disactivateCards(cardsActive);
+			}
+
+		});
+
+	});
+
+
+	function activateCards(cardsActive) {
+		cardsActive.forEach(card => {
+			card.classList.add('active');
+		});
+	}
+
+	function disactivateCards(cardsActive) {
+		cardsActive.forEach(card => {
+			card.classList.remove('active');
+		});
+	}
+
+}
+
+
+
 
 // ================================================================================
