@@ -259,6 +259,7 @@ const teamCards = document.querySelectorAll('.hover-txt');
 const teamBlock = document.querySelector('.team');
 
 if (teamBlock) {
+
 	document.addEventListener("DOMContentLoaded", function (e) {
 		teamCards.forEach(example => {
 			computedFontSize({ el: example, onlyDecreade: true });
@@ -273,18 +274,23 @@ if (teamBlock) {
 		});
 	});
 
-	initializeTeamBtns(); // team cards adjusting
+	adjustTeamCardBlock(); // team cards adjusting
 }
 
 
 //  TEAM CARDS ADJUSTING -----
 
-function initializeTeamBtns() {
+function adjustTeamCardBlock() {
 	const teamBtns = document.querySelectorAll('.team__ctrl-panel button');
+	const cards = document.querySelectorAll('.team__card');
 
 
+	adjustBtnsFuncty(teamBtns);
 
+	adjustCardsFuncty(cards);
+}
 
+function adjustBtnsFuncty(teamBtns) {
 	teamBtns.forEach(teamBtn => {
 		teamBtn.classList.remove('active');
 
@@ -295,7 +301,6 @@ function initializeTeamBtns() {
 			teamBtn.classList.toggle('active');
 
 			if (e.currentTarget.classList.contains('active')) {
-
 				activateCards(cardsActive);
 			} else {
 				disactivateCards(cardsActive);
@@ -304,23 +309,44 @@ function initializeTeamBtns() {
 		});
 
 	});
-
-
-	function activateCards(cardsActive) {
-		cardsActive.forEach(card => {
-			card.classList.add('active');
-		});
-	}
-
-	function disactivateCards(cardsActive) {
-		cardsActive.forEach(card => {
-			card.classList.remove('active');
-		});
-	}
-
 }
 
+function adjustCardsFuncty(cards) {
+	cards.forEach(card => {
+		card.addEventListener("click", function (e) {
+			const activeCardAttribute = e.currentTarget.dataset.card;
+			const activeCardsByCategory = document.querySelectorAll(`.${activeCardAttribute}`);
+			const btnOfThisCategory = document.querySelector(`button[data-btn="${activeCardAttribute}"]`);
+			let activeCardsNumber = 0;
 
+			e.currentTarget.classList.toggle('active');
+
+			activeCardsByCategory.forEach(card => {
+				if (card.classList.contains('active')) {
+					activeCardsNumber += 1;
+				}
+			});
+
+			if ((activeCardsNumber / activeCardsByCategory.length) > 0.5) {
+				btnOfThisCategory.classList.add('active');
+			} else {
+				btnOfThisCategory.classList.remove('active');
+			}
+		});
+	});
+}
+
+function activateCards(cardsActive) {
+	cardsActive.forEach(card => {
+		card.classList.add('active');
+	});
+}
+
+function disactivateCards(cardsActive) {
+	cardsActive.forEach(card => {
+		card.classList.remove('active');
+	});
+}
 
 
 // ================================================================================

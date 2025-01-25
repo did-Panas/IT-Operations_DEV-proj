@@ -159,8 +159,8 @@
 		color: var(--white);
 		opacity: 0;
 		transition:
-			opacity 0.3s ease 0s,
-			background-color 0.3s ease 0s;
+			opacity 0.2s ease 0s,
+			background-color 0.2s ease 0s;
 
 		& p {
 			display: flex;
@@ -252,7 +252,7 @@
 		border: 5px solid var(--white);
 		border-radius: toRem(5);
 		opacity: 0;
-		transition: opacity 0.3s ease 0s;
+		transition: opacity 0.2s ease 0s;
 
 		.card-values.active & {
 			opacity: 1;
