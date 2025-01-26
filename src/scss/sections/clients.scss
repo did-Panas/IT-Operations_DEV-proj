@@ -6,6 +6,13 @@
 
 	background-color: var(--bg1);
 
+	.page-about-us__clients & {
+		margin: toRem(-1) 0;
+
+		background-color: var(--primary);
+		color: var(--white);
+	}
+
 	@media (max-width: $mobileSmall) {
 		padding-top: toRem(40);
 		padding-bottom: toRem(45);
@@ -19,21 +26,61 @@
 	&__wrapper {
 	}
 
+	// .clients__top
+	&__top {
+		.page-about-us__clients & {
+			display: grid;
+			grid-row-gap: toRem(15);
+
+			margin-bottom: toRem(16);
+
+			@media (max-width: $mobileSmall) {
+				margin-bottom: toRem(11);
+			}
+		}
+	}
+
 	// .clients__title
 	&__title {
 		margin-bottom: toRem(55);
+
+		.page-about-us__clients & {
+			margin-bottom: 0;
+		}
 	}
 
 	// .clients__btn-swap
 	&__btn-swap {
+		.page-about-us__clients & {
+			justify-self: end;
+
+			font-size: toRem(32);
+		}
 	}
 
 	// .clients__list
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(157px, 176px));
-		gap: toRem(16);
+		grid-gap: toRem(16);
 		justify-content: center;
+
+		.page-about-us__clients & {
+			@include adaptiveValue("grid-gap", 15, 12, 0, 1250, 479);
+			grid-template-columns: repeat(3, minmax(320px, 370px));
+
+			@media (max-width: em(1099.98)) {
+				grid-template-columns: repeat(2, minmax(320px, 370px));
+			}
+
+			@media (max-width: $mobile) {
+				grid-template-columns: repeat(2, minmax(240px, 370px));
+			}
+
+			@media (max-width: em(599.98)) {
+				grid-template-columns: minmax(240px, 370px);
+			}
+		}
 
 		@media (max-width: $tablet) {
 			grid-template-columns: repeat(auto-fill, minmax(157px, 211px));
@@ -50,8 +97,8 @@
 
 	// .clients__item
 	&__item {
-		padding: toRem(10) toRem(15);
-		aspect-ratio: 176 / 90;
+		padding: 8.152174% 10.869565%; /* 30/368 */
+		aspect-ratio: 368 / 188;
 
 		border-radius: 5px;
 		background-color: var(--white);
@@ -59,10 +106,17 @@
 		transform: scale(1);
 		transition: transform 0.3s ease 0s;
 
-		@media (any-hover: hover) {
-			&:hover {
-				transform: scale(1.046);
+		.page-home__clients &,
+		.page-serv__clients & {
+			@media (any-hover: hover) {
+				&:hover {
+					transform: scale(1.046);
+				}
 			}
+		}
+
+		.page-about-us__clients & {
+			position: relative;
 		}
 	}
 
@@ -74,5 +128,27 @@
 
 	// .clients__item-back
 	&__item-back {
+		.page-about-us__clients & {
+			position: absolute;
+			inset: toRem(-1);
+
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			align-items: center;
+
+			padding: 4% 8.152174%; /* 30/368 */
+
+			border-radius: toRem(5);
+
+			& p {
+				overflow: clip;
+				hyphens: auto;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 4; // к-сть рядків - висоту можна не встановлювати- додається автоматично
+				-webkit-box-orient: vertical;
+			}
+		}
 	}
 }
