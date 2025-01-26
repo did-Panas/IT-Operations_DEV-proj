@@ -54,7 +54,13 @@
 		.page-about-us__clients & {
 			justify-self: end;
 
+			color: var(--white);
 			font-size: toRem(32);
+			transition: color 0.3s ease 0s;
+
+			&.active {
+				color: var(--highlight);
+			}
 		}
 	}
 
@@ -128,27 +134,31 @@
 
 	// .clients__item-back
 	&__item-back {
-		.page-about-us__clients & {
-			position: absolute;
-			inset: toRem(-1);
+		position: absolute;
+		inset: toRem(-1);
 
-			display: flex;
-			justify-content: center;
-			text-align: center;
-			align-items: center;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
 
-			padding: 4% 8.152174%; /* 30/368 */
+		padding: 4% 8.152174%; /* 30/368 */
 
-			border-radius: toRem(5);
+		border-radius: toRem(5);
+		opacity: 0;
+		transition: opacity 0.2s ease 0s;
 
-			& p {
-				overflow: clip;
-				hyphens: auto;
-				text-overflow: ellipsis;
-				display: -webkit-box;
-				-webkit-line-clamp: 4; // к-сть рядків - висоту можна не встановлювати- додається автоматично
-				-webkit-box-orient: vertical;
-			}
+		& p {
+			overflow: clip;
+			hyphens: auto;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 4; // к-сть рядків - висоту можна не встановлювати- додається автоматично
+			-webkit-box-orient: vertical;
+		}
+
+		.clients__item.active & {
+			opacity: 1;
 		}
 	}
 }

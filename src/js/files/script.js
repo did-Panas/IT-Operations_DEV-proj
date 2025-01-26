@@ -228,9 +228,9 @@ function activateThisCheckb(inp) {
 
 // ================================================================================
 
-// ===== ABOUT-US SECTION - TEAM - BLOCK ==========================================
+// ===== ABOUT-US SECTION =========================================================
 
-// FONT-SIZE RESIZING -----
+// FONT-SIZE RESIZING (TEAM - BLOCK) -----
 
 const computedFontSize = ({
 	el,
@@ -278,7 +278,7 @@ if (teamBlock) {
 }
 
 
-//  TEAM CARDS ADJUSTING -----
+//  TEAM CARDS ADJUSTING (TEAM - BLOCK) -----
 
 function adjustTeamCardBlock() {
 	const teamBtns = document.querySelectorAll('.team__ctrl-panel button');
@@ -287,7 +287,7 @@ function adjustTeamCardBlock() {
 
 	adjustBtnsFuncty(teamBtns);
 
-	adjustCardsFuncty(cards);
+	initiateTeamCards(cards);
 }
 
 function adjustBtnsFuncty(teamBtns) {
@@ -311,29 +311,73 @@ function adjustBtnsFuncty(teamBtns) {
 	});
 }
 
-function adjustCardsFuncty(cards) {
+function initiateTeamCards(cards) {
 	cards.forEach(card => {
 		card.addEventListener("click", function (e) {
 			const activeCardAttribute = e.currentTarget.dataset.card;
 			const activeCardsByCategory = document.querySelectorAll(`.${activeCardAttribute}`);
 			const btnOfThisCategory = document.querySelector(`button[data-btn="${activeCardAttribute}"]`);
-			let activeCardsNumber = 0;
 
 			e.currentTarget.classList.toggle('active');
 
-			activeCardsByCategory.forEach(card => {
-				if (card.classList.contains('active')) {
-					activeCardsNumber += 1;
-				}
-			});
-
-			if ((activeCardsNumber / activeCardsByCategory.length) > 0.5) {
-				btnOfThisCategory.classList.add('active');
-			} else {
-				btnOfThisCategory.classList.remove('active');
-			}
+			adjustCardsFuncty(activeCardsByCategory, btnOfThisCategory);
 		});
 	});
+}
+
+// CLIENTS CARDS ADJUSTING (SERVICES - BLOCK) -----
+
+const btnSwap = document.querySelector('.clients__btn-swap');
+
+
+if (btnSwap) {
+	adjustClientsBlock();
+
+}
+
+function adjustClientsBlock() {
+	const clientsCards = document.querySelectorAll('.clients__item');
+
+
+	btnSwap.classList.remove('active');
+
+	btnSwap.addEventListener("click", function (e) {
+		btnSwap.classList.toggle('active');
+
+		if (btnSwap.classList.contains('active')) {
+			activateCards(clientsCards);
+		} else {
+			disactivateCards(clientsCards);
+		}
+
+	});
+
+	clientsCards.forEach(card => {
+		card.addEventListener("click", function (e) {
+			e.currentTarget.classList.toggle('active');
+
+			adjustCardsFuncty(clientsCards, btnSwap);
+		});
+
+	});
+}
+
+// AUXILIERY FUNCTIONS -----
+
+function adjustCardsFuncty(activeCardsByCategory, btnOfThisCategory) {
+	let activeCardsNumber = 0;
+
+	activeCardsByCategory.forEach(card => {
+		if (card.classList.contains('active')) {
+			activeCardsNumber += 1;
+		}
+	});
+
+	if ((activeCardsNumber / activeCardsByCategory.length) > 0.5) {
+		btnOfThisCategory.classList.add('active');
+	} else {
+		btnOfThisCategory.classList.remove('active');
+	}
 }
 
 function activateCards(cardsActive) {
@@ -347,6 +391,5 @@ function disactivateCards(cardsActive) {
 		card.classList.remove('active');
 	});
 }
-
 
 // ================================================================================
