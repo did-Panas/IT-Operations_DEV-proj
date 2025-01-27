@@ -297,6 +297,16 @@ body {
 		}
 	}
 
+	// .page-supp__faq
+	&__faq {
+		@include adaptiveValue("padding-bottom", 120, 80, 2, 1250, 768);
+		padding: toRem(0) toRem(0) toRem(80);
+
+		@media (max-width: $mobileSmall) {
+			padding: toRem(0) toRem(0) toRem(50);
+		}
+	}
+
 	// .page-supp__guide
 	&__guide {
 	}

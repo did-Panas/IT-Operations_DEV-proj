@@ -442,7 +442,7 @@
 							<ul class="clients__list">
 								<li class="clients__item">
 									<div class="clients__logo clients__logo-ibg clients__logo-ibg--contain">
-										<img src="@img/clients/logo-01.png" alt="Image">
+										<div><img src="@img/clients/logo-01.png" alt="Image"></div>
 									</div>
 									<div class="clients__item-back h4" style="background-color: #00529F;">
 										<p>
@@ -518,7 +518,7 @@
 								<p class="guide-item__txt paragraph">
 									Udělejte první krok a přenechte starosti s IT nám.
 								</p>
-								<a href="#!" class="guide-item__link"></a>
+								<a href="#" data-popup='#mod-cont-form' class="guide-item__link"></a>
 							</li>
 							<li class="guide__item guide-item guide-item_highlight">
 								<div class="guide-item__underlay"></div>
@@ -531,7 +531,7 @@
 								<p class="guide-item__txt paragraph">
 									Objevte, jak naše služby mohou zefektivnit vaše podnikání a ušetřit váš čas i peníze.
 								</p>
-								<a href="#!" class="guide-item__link"></a>
+								<a href="services.html" class="guide-item__link"></a>
 							</li>
 							<li class="guide__item guide-item guide-item_complimentary">
 								<div class="guide-item__underlay"></div>
@@ -544,7 +544,7 @@
 								<p class="guide-item__txt paragraph">
 									Čtěte o nejnovějších trendech v IT a získejte cenné rady pro vaše podnikání.
 								</p>
-								<a href="#!" class="guide-item__link"></a>
+								<a href="blog-listing.html" class="guide-item__link"></a>
 							</li>
 						</ul>
 
@@ -558,6 +558,8 @@
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>
+
+	@@include('html/_popup-hero.htm',{})
 
 	@@include('html/_js.htm',{})
 </body>
