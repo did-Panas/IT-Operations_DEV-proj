@@ -394,8 +394,3 @@ function disactivateCards(cardsActive) {
 
 // ================================================================================
 
-//  ======== BARBA JS (Change pages without reloading) ============================
-
-// barba.init({
-// 	// ...
-// });
